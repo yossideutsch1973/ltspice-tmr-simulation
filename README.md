@@ -69,4 +69,35 @@ The circuit is designed to provide high-precision signal conditioning for the TM
 - `NEXT_SESSION_HANDOFF.md` - Instructions for continuing development
 - `simple_test.py`, `opamp_test.py` - Test scripts for SchemaDraw functionality
 - `tmr_stage1.py` - Simplified implementation of first stage for testing
-- `schematics/` - Output directory for generated circuit diagrams 
+- `schematics/` - Output directory for generated circuit diagrams
+
+## Environment Setup and Running Scripts
+
+To avoid Python environment issues, use the provided `run_script.sh` shell script to run any Python scripts in this project:
+
+```bash
+# Make the script executable (if not already)
+chmod +x run_script.sh
+
+# Run a script
+./run_script.sh <script_name.py>
+
+# Examples:
+./run_script.sh simple_test.py
+./run_script.sh tmr_schematic_drawer.py
+```
+
+The shell script handles:
+- Unsetting problematic environment variables (PYTHONHOME and PYTHONPATH)
+- Using the system Python directly
+- Installing required dependencies if needed
+
+### Troubleshooting
+
+If you encounter the error "ModuleNotFoundError: No module named 'encodings'", it's likely due to Python environment configuration issues. Use the provided `run_script.sh` to resolve this.
+
+### SchemaDraw Version
+
+This project uses SchemaDraw 0.19, which has some API differences from earlier versions. Key changes:
+- Op-amp input anchors are named 'in1' and 'in2' (not 'in')
+- Different positioning and scaling parameters 

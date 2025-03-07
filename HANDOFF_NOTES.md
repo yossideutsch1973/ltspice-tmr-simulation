@@ -22,21 +22,54 @@ The project has been set up with:
    - Component selection
    - BOM with estimated costs
 
-## Next Steps
+## Latest Updates (Current Session)
 
-1. **Schematic Capture**
-   - Transfer the circuit designs from `tmr_analog_frontend.txt` to KiCad or Altium Designer
-   - Create a complete schematic with interconnections
-   - Generate proper BOM for sourcing
+### Environment and API Fixes
 
-2. **PCB Layout**
-   - Design rigid-flex PCB for the TMR sensor array
-   - Implement EMI protection and isolation
-   - Place sensors according to golden-angle pattern
+We've successfully resolved the Python environment issues and SchemaDraw API compatibility problems:
 
-3. **Firmware Development**
-   - Implement the algorithms described in the documentation
-   - Develop calibration routines
+1. **Environment Solution**:
+   - Created `run_script.sh` that properly configures the Python environment before running scripts
+   - Unsets problematic environment variables (PYTHONHOME and PYTHONPATH)
+   - Uses system Python directly (/usr/bin/python3.10)
+   - Automatically installs required dependencies if needed
+
+2. **SchemaDraw API Compatibility**:
+   - Fixed anchor naming issues (changed 'in' to 'in1' for Opamp elements)
+   - Fixed function parameter issues in nested functions
+   - Created `check_opamp_anchors.py` to document available anchors in SchemaDraw 0.19
+   - Created `schemdraw_api_changes.md` to document API differences
+
+3. **Documentation Updates**:
+   - Updated README.md with environment setup instructions
+   - Added troubleshooting information
+   - Created detailed API change documentation
+
+### Current Status
+
+All schematics are now generating correctly with SchemaDraw 0.19. The following files have been generated:
+- stage1_instrumentation_amplifier.png
+- stage2_active_lowpass_filter.png
+- stage3_level_shifter.png
+- multiplexer_circuit.png
+- adc_interface.png
+
+### Next Steps
+
+1. **Schematic Review**:
+   - Review generated schematics for correctness and completeness
+   - Verify all engineering improvements are properly implemented
+   - Check component values and connections
+
+2. **Code Refactoring**:
+   - Apply functional programming principles to improve code maintainability
+   - Reduce code duplication in similar circuit sections
+   - Improve error handling
+
+3. **Additional Improvements**:
+   - Implement any remaining items from `schematic_improvements.md`
+   - Add more detailed technical notes to schematics
+   - Consider adding simulation parameters for LTSpice export
 
 ## Repository Structure
 

@@ -606,10 +606,10 @@ def draw_multiplexer():
             d += elm.Capacitor().down(0.5).label('100pF').at((cap_pos[0], cap_pos[1]-0.5))
             d += elm.Ground().at((cap_pos[0], cap_pos[1]-1))
             
-            # Buffer op-amp
-            buffer_pos = (x_end+3, y)
-            buffer = d.add(elm.Opamp(leads=False).right().anchor('in').at((cap_pos[0]+1.25, y)))
-            d += elm.Line().right(0.5).at(cap_pos)
+            # Add buffer amplifier 
+            buffer_pos = (x_end+3, filter_pos[1])
+            buffer = d.add(elm.Opamp(leads=False).right().anchor('in1').at(buffer_pos))
+            d += elm.Line().right(0.5).at(filter_pos)
             
             # Output label
             d += elm.Label().label(f'OUT{i}').at((buffer.out[0]+0.7, buffer.out[1]))
@@ -727,7 +727,7 @@ def draw_adc():
         d += elm.Label().label('Clock').at((box_right-2, box_top-6))
         
         # Anti-aliasing filter circuit template (reused for each input)
-        def draw_input_filter(x_start, y, channel):
+        def draw_input_filter(d, x_start, y, channel):
             # Draw input line from left
             d += elm.Line().left(4).at((x_start, y))
             
@@ -784,7 +784,7 @@ def draw_adc():
         # Add analog inputs with anti-aliasing filters
         for i in range(8):
             y = y_start - i * spacing
-            draw_input_filter(x_start, y, i)
+            draw_input_filter(d, x_start, y, i)
         
         # SPI interface to MCU with isolation
         # Add digital isolator
@@ -793,7 +793,7 @@ def draw_adc():
         iso_box = d.add(elm.Rect(w=3, h=3).at((iso_right, iso_top)))
         d += elm.Label().label('ISO7741\nDigital Isolator').at((iso_right+1.5, iso_top+1.5))
         
-        # Add MCU side
+        # Add microcontroller side
         d += elm.Label().label('To\nMCU').at((iso_right+4.5, iso_top+1.5)).color('green')
         
         # Digital interface (right side) with pull-up resistors
@@ -884,7 +884,7 @@ def draw_adc():
         d += elm.Line().right(0.5).at(cap_ref)
         # Op-amp for buffering
         buffer_pos = (ref_left+4.5, y_ref_start)
-        buffer = d.add(elm.Opamp(leads=False).right().anchor('in').at(buffer_pos))
+        buffer = d.add(elm.Opamp(leads=False).right().anchor('in1').at(buffer_pos))
         d += elm.Label().label('OPA2387').at((buffer_pos[0]+0.75, buffer_pos[1]-1))
         
         # Buffer output to REFIO
