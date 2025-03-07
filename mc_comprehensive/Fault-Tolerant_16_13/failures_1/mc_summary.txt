@@ -1,0 +1,56 @@
+Monte Carlo Simulation Summary
+=============================
+
+Configuration: Fault-Tolerant
+Number of Sensors: 16
+Number of Pole Pairs: 13
+Failed Sensors: 1
+Number of Runs: 51
+
+Results Summary:
+--------------
+
+error_mean:
+  Mean: 0
+  Standard Deviation: 0
+  Range (99% confidence): 0 to 0
+  Min: 0
+  Max: 0
+
+error_std:
+  Mean: 0.001
+  Standard Deviation: 0
+  Range (99% confidence): 0.001 to 0.001
+  Min: 0.001
+  Max: 0.001
+
+error_max:
+  Mean: 0.002
+  Standard Deviation: 0
+  Range (99% confidence): 0.002 to 0.002
+  Min: 0.002
+  Max: 0.002
+
+error_p99:
+  Mean: 0.0019
+  Standard Deviation: 0
+  Range (99% confidence): 0.0019 to 0.0019
+  Min: 0.0019
+  Max: 0.0019
+
+resolution_bits_max:
+  Mean: 16.4576
+  Standard Deviation: 0
+  Range (99% confidence): 16.4576 to 16.4576
+  Min: 16.4576
+  Max: 16.4576
+
+resolution_bits_p99:
+  Mean: 16.5076
+  Standard Deviation: 3.55271e-15
+  Range (99% confidence): 16.5076 to 16.5076
+  Min: 16.5076
+  Max: 16.5076
+
+✗ DOES NOT VALIDATE paper claim of 17-18 bits resolution
+✓ VALIDATES fault tolerance claim with 1 failed sensors

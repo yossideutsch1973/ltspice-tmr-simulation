@@ -1,0 +1,243 @@
+# TMR Sensor Array - Analog Front-End Circuit Design
+
+## Single Channel Analog Front-End Circuit
+
+```
+                                    R2 10k
+                                     ┌───┐
+TMR2305                              │   │
+ ┌───┐                               │   │
+ │   │ OUT                      ┌────┴───┘
+ │   ├───────────┬──────────────┤
+ │   │           │              │
+ │   │           │  R1 499Ω     │    C1 100pF
+ │   │ VDD       └────┐         │    ┌───┐
+ │   ├────────────────┘         │    │   │
+ │   │                          │    │   │
+ │   │                       2 ─┴─┐  └───┘
+ │   │ GND             AD8220   ┌─┘3    │
+ │   ├───────────┐              │       │
+ └───┘           │              │  6    │
+                 │              │+      │
+                 └──────────────┤       │
+                              1 ┤─   8  │
+                                │    ┌──┘
+                                │    │OUTPUT
+                                │    ├───────┐
+      R3 10k                    │    │       │
+       ┌───┐                    │    │       │
+       │   │                    │    │       │
+       │   │                    │    │       │
+ GND ──┴───┴────────────────────┘    │       │
+                                     │       │
+             4                  7    │       │
+      V+ ────┬──────────────────┬────┘       │
+             │AD8220            │            │
+      V- ────┼──────────────────┘            │
+             │5                              │
+       ┌─────┤                               │
+       │     └───────────────────────────────┘
+       │
+       │                         R4 10kΩ       R5 10kΩ
+       │                         ┌───┐         ┌───┐
+       │                         │   │         │   │
+       │                         │   │         │   │
+       └─────────────────────────┴───┴─────────┴───┴── GND
+
+                            Stage 1: Instrumentation Amplifier
+```
+
+```
+                  C2                R7
+                 10nF              16.5kΩ
+                  ┌┐                ┌───┐   
+ INPUT ───┬───────┤├─────┬─────────┤   ├───┐
+          │       └┘     │         │   │   │
+          │              │         └───┘   │
+          │              │                 │
+        ┌─┴─┐            │    OPA2387     ┌┴┐
+  R6    │   │            │     ┌───┐      │ │OUTPUT
+ 10kΩ   │   │            └─────┤ - │      │ ├────────
+        └───┘                  │   ├──────┤ │
+          │                    │ + │      └┬┘
+          │                    └─┬─┘       │
+          │                      │         │
+          │                      │         │
+          │                 R8   │         │
+          │                10kΩ  │         │
+          │                 ┌───┐│         │
+          └─────────────────┤   ├┘         │
+                            │   │          │
+                            └───┘          │
+                              │            │
+                              │            │
+                              │    C3      │
+                              │   100nF    │
+                              │    ┌┐      │
+                              └────┤├──────┘
+                                   └┘
+                                  
+                  Stage 2: Active Low-Pass Filter (20kHz Cutoff)
+```
+
+```
+                  R9               R10
+                 10kΩ              10kΩ
+                  ┌───┐            ┌───┐   
+ INPUT ───────────┤   ├────────────┤   ├───┐
+                  │   │            │   │   │
+                  └───┘            └───┘   │
+                    │                      │
+                    │      OPA2387        ┌┴┐
+                    │       ┌───┐         │ │OUTPUT
+                    └───────┤ - │         │ ├────────
+                            │   ├─────────┤ │
+                   3.3V ────┤ + │         └┬┘
+                            └───┘          │
+                              │            │
+                              │            │
+                              │            │
+                              │            │
+                              │            │
+                              │            │
+                              │            │
+                              │            │
+                      R11     │    C4      │
+                      10kΩ    │   100nF    │
+                     ┌───┐    │    ┌┐      │
+                     │   │    └────┤├──────┘
+                     │   │         └┘
+                     └───┘
+                       │
+                       │
+                     ──┴── GND
+                                  
+                  Stage 3: Level Shifter (0-3.3V Output Range)
+```
+
+## 16-Channel Multiplexing Circuit
+
+```
+                  ADG1607 16-Channel Analog Multiplexer
+    ┌───────────────────────────────────────────────────────┐
+    │                                                       │
+S0 ─┤S0                                                     │
+S1 ─┤S1                                                     │
+S2 ─┤S2                                                     │
+S3 ─┤S3                                                     │
+    │                                                       │
+    │     Channel Inputs                 Outputs            │
+    │                                                       │
+CH0 ┤A0                                  D0├─── OUT0
+CH1 ┤A1                                  D1├─── OUT1
+CH2 ┤A2                                  D2├─── OUT2
+CH3 ┤A3                                  D3├─── OUT3
+CH4 ┤A4                                                     │
+CH5 ┤A5                                                     │
+CH6 ┤A6                                                     │
+CH7 ┤A7                                                     │
+CH8 ┤A8                                                     │
+CH9 ┤A9                                                     │
+CH10┤A10                                                    │
+CH11┤A11                                                    │
+CH12┤A12                                                    │
+CH13┤A13                                                    │
+CH14┤A14                                                    │
+CH15┤A15                                                    │
+    │                                                       │
+EN ─┤EN                                                     │
+    │                                                       │
+    │                                                       │
+    │                                                       │
+    └───┬───────────┬────────────────────┬──────────────┬──┘
+        │           │                    │              │
+      ──┴──       ──┴──                ──┴──          ──┴──
+       GND        AGND                 VDD            VREF
+```
+
+## ADC Interface Circuit
+
+```
+                ADS8688 16-bit, 8-Channel ADC
+    ┌───────────────────────────────────────────────────────┐
+    │                                                       │
+    │     Analog Inputs                Digital Interface    │
+    │                                                       │
+    │                                                       │
+IN0 ┤AIN0                               SCLK├─── SPI_CLK
+IN1 ┤AIN1                               SDI ├─── SPI_MOSI
+IN2 ┤AIN2                               SDO ├─── SPI_MISO
+IN3 ┤AIN3                               CS  ├─── SPI_CS
+IN4 ┤AIN4                                   │
+IN5 ┤AIN5                               RST ├─── RESET
+IN6 ┤AIN6                                   │
+IN7 ┤AIN7                               BUSY├─── BUSY
+    │                                       │
+    │                                       │
+    │     Reference                 Clock   │
+    │                                       │
+    │                                       │
+    │REFIO                           CLKIN ├─── CLOCK
+    │                                       │
+    │REFGND                          CLKSEL├─── GND
+    │                                       │
+    │                                       │
+    │                                       │
+    └───┬───────────┬────────────────────┬──┘
+        │           │                    │
+      ──┴──       ──┴──                ──┴──
+       GND        AGND                 AVDD
+```
+
+## Component List (Analog Front-End)
+
+| Reference | Part | Value | Package | Quantity |
+|-----------|------|-------|---------|----------|
+| U1-U16 | TMR2305 | TMR Sensor | SOT23-3 | 16 |
+| U17-U32 | AD8220 | Instrumentation Amplifier | MSOP-8 | 16 |
+| U33-U40 | OPA2387 | Precision Op-Amp | SOIC-8 | 8 |
+| U41 | ADG1607 | 16:4 Multiplexer | TSSOP-48 | 1 |
+| U42 | ADS8688 | 16-bit, 8-Channel ADC | TSSOP-38 | 1 |
+| R1 | Resistor | 499Ω, 0.1% | 0603 | 16 |
+| R2, R3 | Resistor | 10kΩ, 0.1% | 0603 | 32 |
+| R4, R5 | Resistor | 10kΩ, 0.1% | 0603 | 32 |
+| R6 | Resistor | 10kΩ, 0.1% | 0603 | 16 |
+| R7 | Resistor | 16.5kΩ, 0.1% | 0603 | 16 |
+| R8 | Resistor | 10kΩ, 0.1% | 0603 | 16 |
+| R9, R10, R11 | Resistor | 10kΩ, 0.1% | 0603 | 48 |
+| C1 | Capacitor | 100pF, C0G/NP0 | 0603 | 16 |
+| C2 | Capacitor | 10nF, X7R | 0603 | 16 |
+| C3, C4 | Capacitor | 100nF, X7R | 0603 | 32 |
+
+## Design Notes
+
+1. **TMR Sensor Interface**
+   - Direct interface to TMR2305 sensors
+   - Differential connection to instrumentation amplifier
+   - Bias resistors ensure proper operation
+
+2. **Signal Conditioning**
+   - Gain: 10-100 (adjustable via R1)
+   - Bandwidth: 20kHz (adjustable via C2, R7)
+   - Output range: 0-3.3V for ADC compatibility
+
+3. **Multiplexing Strategy**
+   - 16:4 multiplexing allows for 4 simultaneous channels
+   - Reduces component count while maintaining performance
+   - Enable/disable control for power saving
+
+4. **ADC Interface**
+   - 16-bit resolution for precision measurement
+   - 8 channels (expandable design)
+   - SPI interface to MCU/FPGA
+
+5. **Power Considerations**
+   - Analog section operates from ±5V rails
+   - ADC and digital interface uses 3.3V
+   - Proper decoupling (not shown) required at each component
+
+6. **Layout Guidelines**
+   - Strict separation of analog and digital grounds
+   - Star-ground topology for sensitive analog sections
+   - Short traces for differential signals
+   - Ground planes under signal traces

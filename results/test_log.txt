@@ -1,0 +1,81 @@
+TMR Sensor Array LTspice Test Log
+Date: Thu Mar  6 11:42:41 AM IST 2025
+----------------------------------------
+
+Test: basic_functionality
+Description: Tests basic 8-sensor, 7-pole-pair configuration with golden-angle spacing
+Command: wine ~/.wine/drive_c/Program\ Files/LTC/LTspiceXVII/XVIIx64.exe -b ltspice-test-plan.asc
+./run-ltspice-tests.sh: line 53: wine: command not found
+Status: Failed (exit code: 127)
+----------------------------------------
+
+Test: angular_resolution
+Description: Tests system resolution with 0.002° angle increments
+Command: wine ~/.wine/drive_c/Program\ Files/LTC/LTspiceXVII/XVIIx64.exe -b ltspice-resolution-test.asc
+./run-ltspice-tests.sh: line 53: wine: command not found
+Status: Failed (exit code: 127)
+----------------------------------------
+
+Test: fault_tolerance_1sensor
+Description: Tests system with 1 failed sensor (fail_s0=1)
+Command: wine ~/.wine/drive_c/Program\ Files/LTC/LTspiceXVII/XVIIx64.exe -b ltspice-fault-tolerance.asc
+./run-ltspice-tests.sh: line 53: wine: command not found
+Status: Failed (exit code: 127)
+----------------------------------------
+
+Test: fault_tolerance_2sensors
+Description: Tests system with 2 failed sensors (fail_s0=1, fail_s4=1)
+Command: wine ~/.wine/drive_c/Program\ Files/LTC/LTspiceXVII/XVIIx64.exe -b ltspice-fault-tolerance.asc
+./run-ltspice-tests.sh: line 53: wine: command not found
+Status: Failed (exit code: 127)
+----------------------------------------
+
+Test: config_8_7
+Description: Tests original 8-sensor, 7-pole-pair configuration
+Command: wine ~/.wine/drive_c/Program\ Files/LTC/LTspiceXVII/XVIIx64.exe -b ltspice-config-optimization.asc
+./run-ltspice-tests.sh: line 53: wine: command not found
+Status: Failed (exit code: 127)
+----------------------------------------
+
+Test: config_12_11
+Description: Tests optimized 12-sensor, 11-pole-pair configuration
+Command: wine ~/.wine/drive_c/Program\ Files/LTC/LTspiceXVII/XVIIx64.exe -b ltspice-config-optimization.asc
+./run-ltspice-tests.sh: line 53: wine: command not found
+Status: Failed (exit code: 127)
+----------------------------------------
+
+Test: config_16_17
+Description: Tests high-performance 16-sensor, 17-pole-pair configuration
+Command: wine ~/.wine/drive_c/Program\ Files/LTC/LTspiceXVII/XVIIx64.exe -b ltspice-config-optimization.asc
+./run-ltspice-tests.sh: line 53: wine: command not found
+Status: Failed (exit code: 127)
+----------------------------------------
+
+Test: config_16_13
+Description: Tests fault-tolerant 16-sensor, 13-pole-pair configuration
+Command: wine ~/.wine/drive_c/Program\ Files/LTC/LTspiceXVII/XVIIx64.exe -b ltspice-config-optimization.asc
+./run-ltspice-tests.sh: line 53: wine: command not found
+Status: Failed (exit code: 127)
+----------------------------------------
+
+Test: speed_10000rpm
+Description: Tests system at 10,000 RPM
+Command: wine ~/.wine/drive_c/Program\ Files/LTC/LTspiceXVII/XVIIx64.exe -b ltspice-high-speed-test.asc
+./run-ltspice-tests.sh: line 53: wine: command not found
+Status: Failed (exit code: 127)
+----------------------------------------
+
+Test: speed_20000rpm
+Description: Tests system at 20,000 RPM
+Command: wine ~/.wine/drive_c/Program\ Files/LTC/LTspiceXVII/XVIIx64.exe -b ltspice-high-speed-test.asc
+./run-ltspice-tests.sh: line 53: wine: command not found
+Status: Failed (exit code: 127)
+----------------------------------------
+
+Test: speed_30000rpm
+Description: Tests system at 30,000 RPM
+Command: wine ~/.wine/drive_c/Program\ Files/LTC/LTspiceXVII/XVIIx64.exe -b ltspice-high-speed-test.asc
+./run-ltspice-tests.sh: line 53: wine: command not found
+Status: Failed (exit code: 127)
+----------------------------------------
+

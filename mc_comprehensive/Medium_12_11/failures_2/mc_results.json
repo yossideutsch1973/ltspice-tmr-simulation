@@ -1,0 +1,971 @@
+[
+  {
+    "run_id": 0,
+    "config_name": "Medium",
+    "num_sensors": 12,
+    "pole_pairs": 11,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.211121085177147,
+      "A7": 1.056099676511541,
+      "noise_level": 0.008672380447090714,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0009701312403916447,
+    "error_max": 0.0019402624807832894,
+    "error_p99": 0.0018432493567441248,
+    "resolution_bits_max": 16.50138554604888,
+    "resolution_bits_p99": 16.55138554604888
+  },
+  {
+    "run_id": 1,
+    "config_name": "Medium",
+    "num_sensors": 12,
+    "pole_pairs": 11,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.20266353321500358,
+      "A7": 0.9611187415018078,
+      "noise_level": 0.011498141535542747,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0010617102931470455,
+    "error_max": 0.002123420586294091,
+    "error_p99": 0.0020172495569793863,
+    "resolution_bits_max": 16.371247226581023,
+    "resolution_bits_p99": 16.421247226581023
+  },
+  {
+    "run_id": 2,
+    "config_name": "Medium",
+    "num_sensors": 12,
+    "pole_pairs": 11,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.20371410908312237,
+      "A7": 1.039834837469335,
+      "noise_level": 0.010329245397023281,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0010684231352831104,
+    "error_max": 0.002136846270566221,
+    "error_p99": 0.0020300039570379097,
+    "resolution_bits_max": 16.362154259924033,
+    "resolution_bits_p99": 16.412154259924034
+  },
+  {
+    "run_id": 3,
+    "config_name": "Medium",
+    "num_sensors": 12,
+    "pole_pairs": 11,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.211121085177147,
+      "A7": 1.056099676511541,
+      "noise_level": 0.008672380447090714,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0009701312403916447,
+    "error_max": 0.0019402624807832894,
+    "error_p99": 0.0018432493567441248,
+    "resolution_bits_max": 16.50138554604888,
+    "resolution_bits_p99": 16.55138554604888
+  },
+  {
+    "run_id": 4,
+    "config_name": "Medium",
+    "num_sensors": 12,
+    "pole_pairs": 11,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.20266353321500358,
+      "A7": 0.9611187415018078,
+      "noise_level": 0.011498141535542747,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0010617102931470455,
+    "error_max": 0.002123420586294091,
+    "error_p99": 0.0020172495569793863,
+    "resolution_bits_max": 16.371247226581023,
+    "resolution_bits_p99": 16.421247226581023
+  },
+  {
+    "run_id": 5,
+    "config_name": "Medium",
+    "num_sensors": 12,
+    "pole_pairs": 11,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.20371410908312237,
+      "A7": 1.039834837469335,
+      "noise_level": 0.010329245397023281,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0010684231352831104,
+    "error_max": 0.002136846270566221,
+    "error_p99": 0.0020300039570379097,
+    "resolution_bits_max": 16.362154259924033,
+    "resolution_bits_p99": 16.412154259924034
+  },
+  {
+    "run_id": 6,
+    "config_name": "Medium",
+    "num_sensors": 12,
+    "pole_pairs": 11,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.211121085177147,
+      "A7": 1.056099676511541,
+      "noise_level": 0.008672380447090714,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0009701312403916447,
+    "error_max": 0.0019402624807832894,
+    "error_p99": 0.0018432493567441248,
+    "resolution_bits_max": 16.50138554604888,
+    "resolution_bits_p99": 16.55138554604888
+  },
+  {
+    "run_id": 7,
+    "config_name": "Medium",
+    "num_sensors": 12,
+    "pole_pairs": 11,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.20266353321500358,
+      "A7": 0.9611187415018078,
+      "noise_level": 0.011498141535542747,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0010617102931470455,
+    "error_max": 0.002123420586294091,
+    "error_p99": 0.0020172495569793863,
+    "resolution_bits_max": 16.371247226581023,
+    "resolution_bits_p99": 16.421247226581023
+  },
+  {
+    "run_id": 8,
+    "config_name": "Medium",
+    "num_sensors": 12,
+    "pole_pairs": 11,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.20371410908312237,
+      "A7": 1.039834837469335,
+      "noise_level": 0.010329245397023281,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0010684231352831104,
+    "error_max": 0.002136846270566221,
+    "error_p99": 0.0020300039570379097,
+    "resolution_bits_max": 16.362154259924033,
+    "resolution_bits_p99": 16.412154259924034
+  },
+  {
+    "run_id": 9,
+    "config_name": "Medium",
+    "num_sensors": 12,
+    "pole_pairs": 11,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.211121085177147,
+      "A7": 1.056099676511541,
+      "noise_level": 0.008672380447090714,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0009701312403916447,
+    "error_max": 0.0019402624807832894,
+    "error_p99": 0.0018432493567441248,
+    "resolution_bits_max": 16.50138554604888,
+    "resolution_bits_p99": 16.55138554604888
+  },
+  {
+    "run_id": 10,
+    "config_name": "Medium",
+    "num_sensors": 12,
+    "pole_pairs": 11,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.20266353321500358,
+      "A7": 0.9611187415018078,
+      "noise_level": 0.011498141535542747,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0010617102931470455,
+    "error_max": 0.002123420586294091,
+    "error_p99": 0.0020172495569793863,
+    "resolution_bits_max": 16.371247226581023,
+    "resolution_bits_p99": 16.421247226581023
+  },
+  {
+    "run_id": 11,
+    "config_name": "Medium",
+    "num_sensors": 12,
+    "pole_pairs": 11,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.20371410908312237,
+      "A7": 1.039834837469335,
+      "noise_level": 0.010329245397023281,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0010684231352831104,
+    "error_max": 0.002136846270566221,
+    "error_p99": 0.0020300039570379097,
+    "resolution_bits_max": 16.362154259924033,
+    "resolution_bits_p99": 16.412154259924034
+  },
+  {
+    "run_id": 12,
+    "config_name": "Medium",
+    "num_sensors": 12,
+    "pole_pairs": 11,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.211121085177147,
+      "A7": 1.056099676511541,
+      "noise_level": 0.008672380447090714,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0009701312403916447,
+    "error_max": 0.0019402624807832894,
+    "error_p99": 0.0018432493567441248,
+    "resolution_bits_max": 16.50138554604888,
+    "resolution_bits_p99": 16.55138554604888
+  },
+  {
+    "run_id": 13,
+    "config_name": "Medium",
+    "num_sensors": 12,
+    "pole_pairs": 11,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.20266353321500358,
+      "A7": 0.9611187415018078,
+      "noise_level": 0.011498141535542747,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0010617102931470455,
+    "error_max": 0.002123420586294091,
+    "error_p99": 0.0020172495569793863,
+    "resolution_bits_max": 16.371247226581023,
+    "resolution_bits_p99": 16.421247226581023
+  },
+  {
+    "run_id": 14,
+    "config_name": "Medium",
+    "num_sensors": 12,
+    "pole_pairs": 11,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.20371410908312237,
+      "A7": 1.039834837469335,
+      "noise_level": 0.010329245397023281,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0010684231352831104,
+    "error_max": 0.002136846270566221,
+    "error_p99": 0.0020300039570379097,
+    "resolution_bits_max": 16.362154259924033,
+    "resolution_bits_p99": 16.412154259924034
+  },
+  {
+    "run_id": 15,
+    "config_name": "Medium",
+    "num_sensors": 12,
+    "pole_pairs": 11,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.211121085177147,
+      "A7": 1.056099676511541,
+      "noise_level": 0.008672380447090714,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0009701312403916447,
+    "error_max": 0.0019402624807832894,
+    "error_p99": 0.0018432493567441248,
+    "resolution_bits_max": 16.50138554604888,
+    "resolution_bits_p99": 16.55138554604888
+  },
+  {
+    "run_id": 16,
+    "config_name": "Medium",
+    "num_sensors": 12,
+    "pole_pairs": 11,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.20266353321500358,
+      "A7": 0.9611187415018078,
+      "noise_level": 0.011498141535542747,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0010617102931470455,
+    "error_max": 0.002123420586294091,
+    "error_p99": 0.0020172495569793863,
+    "resolution_bits_max": 16.371247226581023,
+    "resolution_bits_p99": 16.421247226581023
+  },
+  {
+    "run_id": 17,
+    "config_name": "Medium",
+    "num_sensors": 12,
+    "pole_pairs": 11,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.20371410908312237,
+      "A7": 1.039834837469335,
+      "noise_level": 0.010329245397023281,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0010684231352831104,
+    "error_max": 0.002136846270566221,
+    "error_p99": 0.0020300039570379097,
+    "resolution_bits_max": 16.362154259924033,
+    "resolution_bits_p99": 16.412154259924034
+  },
+  {
+    "run_id": 18,
+    "config_name": "Medium",
+    "num_sensors": 12,
+    "pole_pairs": 11,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.211121085177147,
+      "A7": 1.056099676511541,
+      "noise_level": 0.008672380447090714,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0009701312403916447,
+    "error_max": 0.0019402624807832894,
+    "error_p99": 0.0018432493567441248,
+    "resolution_bits_max": 16.50138554604888,
+    "resolution_bits_p99": 16.55138554604888
+  },
+  {
+    "run_id": 19,
+    "config_name": "Medium",
+    "num_sensors": 12,
+    "pole_pairs": 11,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.20266353321500358,
+      "A7": 0.9611187415018078,
+      "noise_level": 0.011498141535542747,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0010617102931470455,
+    "error_max": 0.002123420586294091,
+    "error_p99": 0.0020172495569793863,
+    "resolution_bits_max": 16.371247226581023,
+    "resolution_bits_p99": 16.421247226581023
+  },
+  {
+    "run_id": 20,
+    "config_name": "Medium",
+    "num_sensors": 12,
+    "pole_pairs": 11,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.20371410908312237,
+      "A7": 1.039834837469335,
+      "noise_level": 0.010329245397023281,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0010684231352831104,
+    "error_max": 0.002136846270566221,
+    "error_p99": 0.0020300039570379097,
+    "resolution_bits_max": 16.362154259924033,
+    "resolution_bits_p99": 16.412154259924034
+  },
+  {
+    "run_id": 21,
+    "config_name": "Medium",
+    "num_sensors": 12,
+    "pole_pairs": 11,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.211121085177147,
+      "A7": 1.056099676511541,
+      "noise_level": 0.008672380447090714,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0009701312403916447,
+    "error_max": 0.0019402624807832894,
+    "error_p99": 0.0018432493567441248,
+    "resolution_bits_max": 16.50138554604888,
+    "resolution_bits_p99": 16.55138554604888
+  },
+  {
+    "run_id": 22,
+    "config_name": "Medium",
+    "num_sensors": 12,
+    "pole_pairs": 11,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.20266353321500358,
+      "A7": 0.9611187415018078,
+      "noise_level": 0.011498141535542747,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0010617102931470455,
+    "error_max": 0.002123420586294091,
+    "error_p99": 0.0020172495569793863,
+    "resolution_bits_max": 16.371247226581023,
+    "resolution_bits_p99": 16.421247226581023
+  },
+  {
+    "run_id": 23,
+    "config_name": "Medium",
+    "num_sensors": 12,
+    "pole_pairs": 11,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.20371410908312237,
+      "A7": 1.039834837469335,
+      "noise_level": 0.010329245397023281,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0010684231352831104,
+    "error_max": 0.002136846270566221,
+    "error_p99": 0.0020300039570379097,
+    "resolution_bits_max": 16.362154259924033,
+    "resolution_bits_p99": 16.412154259924034
+  },
+  {
+    "run_id": 24,
+    "config_name": "Medium",
+    "num_sensors": 12,
+    "pole_pairs": 11,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.211121085177147,
+      "A7": 1.056099676511541,
+      "noise_level": 0.008672380447090714,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0009701312403916447,
+    "error_max": 0.0019402624807832894,
+    "error_p99": 0.0018432493567441248,
+    "resolution_bits_max": 16.50138554604888,
+    "resolution_bits_p99": 16.55138554604888
+  },
+  {
+    "run_id": 25,
+    "config_name": "Medium",
+    "num_sensors": 12,
+    "pole_pairs": 11,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.20266353321500358,
+      "A7": 0.9611187415018078,
+      "noise_level": 0.011498141535542747,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0010617102931470455,
+    "error_max": 0.002123420586294091,
+    "error_p99": 0.0020172495569793863,
+    "resolution_bits_max": 16.371247226581023,
+    "resolution_bits_p99": 16.421247226581023
+  },
+  {
+    "run_id": 26,
+    "config_name": "Medium",
+    "num_sensors": 12,
+    "pole_pairs": 11,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.20371410908312237,
+      "A7": 1.039834837469335,
+      "noise_level": 0.010329245397023281,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0010684231352831104,
+    "error_max": 0.002136846270566221,
+    "error_p99": 0.0020300039570379097,
+    "resolution_bits_max": 16.362154259924033,
+    "resolution_bits_p99": 16.412154259924034
+  },
+  {
+    "run_id": 27,
+    "config_name": "Medium",
+    "num_sensors": 12,
+    "pole_pairs": 11,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.211121085177147,
+      "A7": 1.056099676511541,
+      "noise_level": 0.008672380447090714,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0009701312403916447,
+    "error_max": 0.0019402624807832894,
+    "error_p99": 0.0018432493567441248,
+    "resolution_bits_max": 16.50138554604888,
+    "resolution_bits_p99": 16.55138554604888
+  },
+  {
+    "run_id": 28,
+    "config_name": "Medium",
+    "num_sensors": 12,
+    "pole_pairs": 11,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.20266353321500358,
+      "A7": 0.9611187415018078,
+      "noise_level": 0.011498141535542747,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0010617102931470455,
+    "error_max": 0.002123420586294091,
+    "error_p99": 0.0020172495569793863,
+    "resolution_bits_max": 16.371247226581023,
+    "resolution_bits_p99": 16.421247226581023
+  },
+  {
+    "run_id": 29,
+    "config_name": "Medium",
+    "num_sensors": 12,
+    "pole_pairs": 11,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.20371410908312237,
+      "A7": 1.039834837469335,
+      "noise_level": 0.010329245397023281,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0010684231352831104,
+    "error_max": 0.002136846270566221,
+    "error_p99": 0.0020300039570379097,
+    "resolution_bits_max": 16.362154259924033,
+    "resolution_bits_p99": 16.412154259924034
+  },
+  {
+    "run_id": 30,
+    "config_name": "Medium",
+    "num_sensors": 12,
+    "pole_pairs": 11,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.211121085177147,
+      "A7": 1.056099676511541,
+      "noise_level": 0.008672380447090714,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0009701312403916447,
+    "error_max": 0.0019402624807832894,
+    "error_p99": 0.0018432493567441248,
+    "resolution_bits_max": 16.50138554604888,
+    "resolution_bits_p99": 16.55138554604888
+  },
+  {
+    "run_id": 31,
+    "config_name": "Medium",
+    "num_sensors": 12,
+    "pole_pairs": 11,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.20266353321500358,
+      "A7": 0.9611187415018078,
+      "noise_level": 0.011498141535542747,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0010617102931470455,
+    "error_max": 0.002123420586294091,
+    "error_p99": 0.0020172495569793863,
+    "resolution_bits_max": 16.371247226581023,
+    "resolution_bits_p99": 16.421247226581023
+  },
+  {
+    "run_id": 32,
+    "config_name": "Medium",
+    "num_sensors": 12,
+    "pole_pairs": 11,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.20371410908312237,
+      "A7": 1.039834837469335,
+      "noise_level": 0.010329245397023281,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0010684231352831104,
+    "error_max": 0.002136846270566221,
+    "error_p99": 0.0020300039570379097,
+    "resolution_bits_max": 16.362154259924033,
+    "resolution_bits_p99": 16.412154259924034
+  },
+  {
+    "run_id": 33,
+    "config_name": "Medium",
+    "num_sensors": 12,
+    "pole_pairs": 11,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.211121085177147,
+      "A7": 1.056099676511541,
+      "noise_level": 0.008672380447090714,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0009701312403916447,
+    "error_max": 0.0019402624807832894,
+    "error_p99": 0.0018432493567441248,
+    "resolution_bits_max": 16.50138554604888,
+    "resolution_bits_p99": 16.55138554604888
+  },
+  {
+    "run_id": 34,
+    "config_name": "Medium",
+    "num_sensors": 12,
+    "pole_pairs": 11,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.20266353321500358,
+      "A7": 0.9611187415018078,
+      "noise_level": 0.011498141535542747,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0010617102931470455,
+    "error_max": 0.002123420586294091,
+    "error_p99": 0.0020172495569793863,
+    "resolution_bits_max": 16.371247226581023,
+    "resolution_bits_p99": 16.421247226581023
+  },
+  {
+    "run_id": 35,
+    "config_name": "Medium",
+    "num_sensors": 12,
+    "pole_pairs": 11,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.20371410908312237,
+      "A7": 1.039834837469335,
+      "noise_level": 0.010329245397023281,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0010684231352831104,
+    "error_max": 0.002136846270566221,
+    "error_p99": 0.0020300039570379097,
+    "resolution_bits_max": 16.362154259924033,
+    "resolution_bits_p99": 16.412154259924034
+  },
+  {
+    "run_id": 36,
+    "config_name": "Medium",
+    "num_sensors": 12,
+    "pole_pairs": 11,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.211121085177147,
+      "A7": 1.056099676511541,
+      "noise_level": 0.008672380447090714,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0009701312403916447,
+    "error_max": 0.0019402624807832894,
+    "error_p99": 0.0018432493567441248,
+    "resolution_bits_max": 16.50138554604888,
+    "resolution_bits_p99": 16.55138554604888
+  },
+  {
+    "run_id": 37,
+    "config_name": "Medium",
+    "num_sensors": 12,
+    "pole_pairs": 11,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.20266353321500358,
+      "A7": 0.9611187415018078,
+      "noise_level": 0.011498141535542747,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0010617102931470455,
+    "error_max": 0.002123420586294091,
+    "error_p99": 0.0020172495569793863,
+    "resolution_bits_max": 16.371247226581023,
+    "resolution_bits_p99": 16.421247226581023
+  },
+  {
+    "run_id": 38,
+    "config_name": "Medium",
+    "num_sensors": 12,
+    "pole_pairs": 11,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.20371410908312237,
+      "A7": 1.039834837469335,
+      "noise_level": 0.010329245397023281,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0010684231352831104,
+    "error_max": 0.002136846270566221,
+    "error_p99": 0.0020300039570379097,
+    "resolution_bits_max": 16.362154259924033,
+    "resolution_bits_p99": 16.412154259924034
+  },
+  {
+    "run_id": 39,
+    "config_name": "Medium",
+    "num_sensors": 12,
+    "pole_pairs": 11,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.211121085177147,
+      "A7": 1.056099676511541,
+      "noise_level": 0.008672380447090714,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0009701312403916447,
+    "error_max": 0.0019402624807832894,
+    "error_p99": 0.0018432493567441248,
+    "resolution_bits_max": 16.50138554604888,
+    "resolution_bits_p99": 16.55138554604888
+  },
+  {
+    "run_id": 40,
+    "config_name": "Medium",
+    "num_sensors": 12,
+    "pole_pairs": 11,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.20266353321500358,
+      "A7": 0.9611187415018078,
+      "noise_level": 0.011498141535542747,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0010617102931470455,
+    "error_max": 0.002123420586294091,
+    "error_p99": 0.0020172495569793863,
+    "resolution_bits_max": 16.371247226581023,
+    "resolution_bits_p99": 16.421247226581023
+  },
+  {
+    "run_id": 41,
+    "config_name": "Medium",
+    "num_sensors": 12,
+    "pole_pairs": 11,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.20371410908312237,
+      "A7": 1.039834837469335,
+      "noise_level": 0.010329245397023281,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0010684231352831104,
+    "error_max": 0.002136846270566221,
+    "error_p99": 0.0020300039570379097,
+    "resolution_bits_max": 16.362154259924033,
+    "resolution_bits_p99": 16.412154259924034
+  },
+  {
+    "run_id": 42,
+    "config_name": "Medium",
+    "num_sensors": 12,
+    "pole_pairs": 11,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.211121085177147,
+      "A7": 1.056099676511541,
+      "noise_level": 0.008672380447090714,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0009701312403916447,
+    "error_max": 0.0019402624807832894,
+    "error_p99": 0.0018432493567441248,
+    "resolution_bits_max": 16.50138554604888,
+    "resolution_bits_p99": 16.55138554604888
+  },
+  {
+    "run_id": 43,
+    "config_name": "Medium",
+    "num_sensors": 12,
+    "pole_pairs": 11,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.20266353321500358,
+      "A7": 0.9611187415018078,
+      "noise_level": 0.011498141535542747,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0010617102931470455,
+    "error_max": 0.002123420586294091,
+    "error_p99": 0.0020172495569793863,
+    "resolution_bits_max": 16.371247226581023,
+    "resolution_bits_p99": 16.421247226581023
+  },
+  {
+    "run_id": 44,
+    "config_name": "Medium",
+    "num_sensors": 12,
+    "pole_pairs": 11,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.20371410908312237,
+      "A7": 1.039834837469335,
+      "noise_level": 0.010329245397023281,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0010684231352831104,
+    "error_max": 0.002136846270566221,
+    "error_p99": 0.0020300039570379097,
+    "resolution_bits_max": 16.362154259924033,
+    "resolution_bits_p99": 16.412154259924034
+  },
+  {
+    "run_id": 45,
+    "config_name": "Medium",
+    "num_sensors": 12,
+    "pole_pairs": 11,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.211121085177147,
+      "A7": 1.056099676511541,
+      "noise_level": 0.008672380447090714,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0009701312403916447,
+    "error_max": 0.0019402624807832894,
+    "error_p99": 0.0018432493567441248,
+    "resolution_bits_max": 16.50138554604888,
+    "resolution_bits_p99": 16.55138554604888
+  },
+  {
+    "run_id": 46,
+    "config_name": "Medium",
+    "num_sensors": 12,
+    "pole_pairs": 11,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.20266353321500358,
+      "A7": 0.9611187415018078,
+      "noise_level": 0.011498141535542747,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0010617102931470455,
+    "error_max": 0.002123420586294091,
+    "error_p99": 0.0020172495569793863,
+    "resolution_bits_max": 16.371247226581023,
+    "resolution_bits_p99": 16.421247226581023
+  },
+  {
+    "run_id": 47,
+    "config_name": "Medium",
+    "num_sensors": 12,
+    "pole_pairs": 11,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.20371410908312237,
+      "A7": 1.039834837469335,
+      "noise_level": 0.010329245397023281,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0010684231352831104,
+    "error_max": 0.002136846270566221,
+    "error_p99": 0.0020300039570379097,
+    "resolution_bits_max": 16.362154259924033,
+    "resolution_bits_p99": 16.412154259924034
+  },
+  {
+    "run_id": 48,
+    "config_name": "Medium",
+    "num_sensors": 12,
+    "pole_pairs": 11,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.21253962938709528,
+      "A7": 0.9589890472044297,
+      "noise_level": 0.009418878643340263,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0009016662339017049,
+    "error_max": 0.0018033324678034099,
+    "error_p99": 0.0017131658444132392,
+    "resolution_bits_max": 16.60697198009855,
+    "resolution_bits_p99": 16.65697198009855
+  },
+  {
+    "run_id": 49,
+    "config_name": "Medium",
+    "num_sensors": 12,
+    "pole_pairs": 11,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.20734654714372175,
+      "A7": 1.0603485684975233,
+      "noise_level": 0.010857229126212748,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0010513020701847899,
+    "error_max": 0.0021026041403695798,
+    "error_p99": 0.001997473933351101,
+    "resolution_bits_max": 16.38546012316343,
+    "resolution_bits_p99": 16.43546012316343
+  },
+  {
+    "run_id": 50,
+    "config_name": "Medium",
+    "num_sensors": 12,
+    "pole_pairs": 11,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.1875894440007301,
+      "A7": 0.9440128909891146,
+      "noise_level": 0.010095420483751713,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0010548831626557601,
+    "error_max": 0.0021097663253115202,
+    "error_p99": 0.002004278009045944,
+    "resolution_bits_max": 16.38055416404181,
+    "resolution_bits_p99": 16.430554164041812
+  }
+]

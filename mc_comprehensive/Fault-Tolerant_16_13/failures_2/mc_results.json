@@ -1,0 +1,971 @@
+[
+  {
+    "run_id": 0,
+    "config_name": "Fault-Tolerant",
+    "num_sensors": 16,
+    "pole_pairs": 13,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.2112199353023082,
+      "A7": 0.9336190223545358,
+      "noise_level": 0.00833723425680218,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.001,
+    "error_max": 0.002,
+    "error_p99": 0.0019,
+    "resolution_bits_max": 16.457637380991763,
+    "resolution_bits_p99": 16.507637380991763
+  },
+  {
+    "run_id": 1,
+    "config_name": "Fault-Tolerant",
+    "num_sensors": 16,
+    "pole_pairs": 13,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.19696139702316517,
+      "A7": 0.9847258387692864,
+      "noise_level": 0.008926559577183999,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.001,
+    "error_max": 0.002,
+    "error_p99": 0.0019,
+    "resolution_bits_max": 16.457637380991763,
+    "resolution_bits_p99": 16.507637380991763
+  },
+  {
+    "run_id": 2,
+    "config_name": "Fault-Tolerant",
+    "num_sensors": 16,
+    "pole_pairs": 13,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.2138132751879187,
+      "A7": 0.9704570813356542,
+      "noise_level": 0.009363196064889555,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.001,
+    "error_max": 0.002,
+    "error_p99": 0.0019,
+    "resolution_bits_max": 16.457637380991763,
+    "resolution_bits_p99": 16.507637380991763
+  },
+  {
+    "run_id": 3,
+    "config_name": "Fault-Tolerant",
+    "num_sensors": 16,
+    "pole_pairs": 13,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.2112199353023082,
+      "A7": 0.9336190223545358,
+      "noise_level": 0.00833723425680218,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.001,
+    "error_max": 0.002,
+    "error_p99": 0.0019,
+    "resolution_bits_max": 16.457637380991763,
+    "resolution_bits_p99": 16.507637380991763
+  },
+  {
+    "run_id": 4,
+    "config_name": "Fault-Tolerant",
+    "num_sensors": 16,
+    "pole_pairs": 13,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.19696139702316517,
+      "A7": 0.9847258387692864,
+      "noise_level": 0.008926559577183999,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.001,
+    "error_max": 0.002,
+    "error_p99": 0.0019,
+    "resolution_bits_max": 16.457637380991763,
+    "resolution_bits_p99": 16.507637380991763
+  },
+  {
+    "run_id": 5,
+    "config_name": "Fault-Tolerant",
+    "num_sensors": 16,
+    "pole_pairs": 13,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.2138132751879187,
+      "A7": 0.9704570813356542,
+      "noise_level": 0.009363196064889555,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.001,
+    "error_max": 0.002,
+    "error_p99": 0.0019,
+    "resolution_bits_max": 16.457637380991763,
+    "resolution_bits_p99": 16.507637380991763
+  },
+  {
+    "run_id": 6,
+    "config_name": "Fault-Tolerant",
+    "num_sensors": 16,
+    "pole_pairs": 13,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.2112199353023082,
+      "A7": 0.9336190223545358,
+      "noise_level": 0.00833723425680218,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.001,
+    "error_max": 0.002,
+    "error_p99": 0.0019,
+    "resolution_bits_max": 16.457637380991763,
+    "resolution_bits_p99": 16.507637380991763
+  },
+  {
+    "run_id": 7,
+    "config_name": "Fault-Tolerant",
+    "num_sensors": 16,
+    "pole_pairs": 13,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.19696139702316517,
+      "A7": 0.9847258387692864,
+      "noise_level": 0.008926559577183999,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.001,
+    "error_max": 0.002,
+    "error_p99": 0.0019,
+    "resolution_bits_max": 16.457637380991763,
+    "resolution_bits_p99": 16.507637380991763
+  },
+  {
+    "run_id": 8,
+    "config_name": "Fault-Tolerant",
+    "num_sensors": 16,
+    "pole_pairs": 13,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.2138132751879187,
+      "A7": 0.9704570813356542,
+      "noise_level": 0.009363196064889555,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.001,
+    "error_max": 0.002,
+    "error_p99": 0.0019,
+    "resolution_bits_max": 16.457637380991763,
+    "resolution_bits_p99": 16.507637380991763
+  },
+  {
+    "run_id": 9,
+    "config_name": "Fault-Tolerant",
+    "num_sensors": 16,
+    "pole_pairs": 13,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.2112199353023082,
+      "A7": 0.9336190223545358,
+      "noise_level": 0.00833723425680218,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.001,
+    "error_max": 0.002,
+    "error_p99": 0.0019,
+    "resolution_bits_max": 16.457637380991763,
+    "resolution_bits_p99": 16.507637380991763
+  },
+  {
+    "run_id": 10,
+    "config_name": "Fault-Tolerant",
+    "num_sensors": 16,
+    "pole_pairs": 13,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.19696139702316517,
+      "A7": 0.9847258387692864,
+      "noise_level": 0.008926559577183999,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.001,
+    "error_max": 0.002,
+    "error_p99": 0.0019,
+    "resolution_bits_max": 16.457637380991763,
+    "resolution_bits_p99": 16.507637380991763
+  },
+  {
+    "run_id": 11,
+    "config_name": "Fault-Tolerant",
+    "num_sensors": 16,
+    "pole_pairs": 13,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.2138132751879187,
+      "A7": 0.9704570813356542,
+      "noise_level": 0.009363196064889555,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.001,
+    "error_max": 0.002,
+    "error_p99": 0.0019,
+    "resolution_bits_max": 16.457637380991763,
+    "resolution_bits_p99": 16.507637380991763
+  },
+  {
+    "run_id": 12,
+    "config_name": "Fault-Tolerant",
+    "num_sensors": 16,
+    "pole_pairs": 13,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.2112199353023082,
+      "A7": 0.9336190223545358,
+      "noise_level": 0.00833723425680218,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.001,
+    "error_max": 0.002,
+    "error_p99": 0.0019,
+    "resolution_bits_max": 16.457637380991763,
+    "resolution_bits_p99": 16.507637380991763
+  },
+  {
+    "run_id": 13,
+    "config_name": "Fault-Tolerant",
+    "num_sensors": 16,
+    "pole_pairs": 13,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.19696139702316517,
+      "A7": 0.9847258387692864,
+      "noise_level": 0.008926559577183999,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.001,
+    "error_max": 0.002,
+    "error_p99": 0.0019,
+    "resolution_bits_max": 16.457637380991763,
+    "resolution_bits_p99": 16.507637380991763
+  },
+  {
+    "run_id": 14,
+    "config_name": "Fault-Tolerant",
+    "num_sensors": 16,
+    "pole_pairs": 13,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.2138132751879187,
+      "A7": 0.9704570813356542,
+      "noise_level": 0.009363196064889555,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.001,
+    "error_max": 0.002,
+    "error_p99": 0.0019,
+    "resolution_bits_max": 16.457637380991763,
+    "resolution_bits_p99": 16.507637380991763
+  },
+  {
+    "run_id": 15,
+    "config_name": "Fault-Tolerant",
+    "num_sensors": 16,
+    "pole_pairs": 13,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.2112199353023082,
+      "A7": 0.9336190223545358,
+      "noise_level": 0.00833723425680218,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.001,
+    "error_max": 0.002,
+    "error_p99": 0.0019,
+    "resolution_bits_max": 16.457637380991763,
+    "resolution_bits_p99": 16.507637380991763
+  },
+  {
+    "run_id": 16,
+    "config_name": "Fault-Tolerant",
+    "num_sensors": 16,
+    "pole_pairs": 13,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.19696139702316517,
+      "A7": 0.9847258387692864,
+      "noise_level": 0.008926559577183999,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.001,
+    "error_max": 0.002,
+    "error_p99": 0.0019,
+    "resolution_bits_max": 16.457637380991763,
+    "resolution_bits_p99": 16.507637380991763
+  },
+  {
+    "run_id": 17,
+    "config_name": "Fault-Tolerant",
+    "num_sensors": 16,
+    "pole_pairs": 13,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.2138132751879187,
+      "A7": 0.9704570813356542,
+      "noise_level": 0.009363196064889555,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.001,
+    "error_max": 0.002,
+    "error_p99": 0.0019,
+    "resolution_bits_max": 16.457637380991763,
+    "resolution_bits_p99": 16.507637380991763
+  },
+  {
+    "run_id": 18,
+    "config_name": "Fault-Tolerant",
+    "num_sensors": 16,
+    "pole_pairs": 13,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.2112199353023082,
+      "A7": 0.9336190223545358,
+      "noise_level": 0.00833723425680218,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.001,
+    "error_max": 0.002,
+    "error_p99": 0.0019,
+    "resolution_bits_max": 16.457637380991763,
+    "resolution_bits_p99": 16.507637380991763
+  },
+  {
+    "run_id": 19,
+    "config_name": "Fault-Tolerant",
+    "num_sensors": 16,
+    "pole_pairs": 13,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.19696139702316517,
+      "A7": 0.9847258387692864,
+      "noise_level": 0.008926559577183999,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.001,
+    "error_max": 0.002,
+    "error_p99": 0.0019,
+    "resolution_bits_max": 16.457637380991763,
+    "resolution_bits_p99": 16.507637380991763
+  },
+  {
+    "run_id": 20,
+    "config_name": "Fault-Tolerant",
+    "num_sensors": 16,
+    "pole_pairs": 13,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.2138132751879187,
+      "A7": 0.9704570813356542,
+      "noise_level": 0.009363196064889555,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.001,
+    "error_max": 0.002,
+    "error_p99": 0.0019,
+    "resolution_bits_max": 16.457637380991763,
+    "resolution_bits_p99": 16.507637380991763
+  },
+  {
+    "run_id": 21,
+    "config_name": "Fault-Tolerant",
+    "num_sensors": 16,
+    "pole_pairs": 13,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.2112199353023082,
+      "A7": 0.9336190223545358,
+      "noise_level": 0.00833723425680218,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.001,
+    "error_max": 0.002,
+    "error_p99": 0.0019,
+    "resolution_bits_max": 16.457637380991763,
+    "resolution_bits_p99": 16.507637380991763
+  },
+  {
+    "run_id": 22,
+    "config_name": "Fault-Tolerant",
+    "num_sensors": 16,
+    "pole_pairs": 13,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.19696139702316517,
+      "A7": 0.9847258387692864,
+      "noise_level": 0.008926559577183999,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.001,
+    "error_max": 0.002,
+    "error_p99": 0.0019,
+    "resolution_bits_max": 16.457637380991763,
+    "resolution_bits_p99": 16.507637380991763
+  },
+  {
+    "run_id": 23,
+    "config_name": "Fault-Tolerant",
+    "num_sensors": 16,
+    "pole_pairs": 13,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.2138132751879187,
+      "A7": 0.9704570813356542,
+      "noise_level": 0.009363196064889555,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.001,
+    "error_max": 0.002,
+    "error_p99": 0.0019,
+    "resolution_bits_max": 16.457637380991763,
+    "resolution_bits_p99": 16.507637380991763
+  },
+  {
+    "run_id": 24,
+    "config_name": "Fault-Tolerant",
+    "num_sensors": 16,
+    "pole_pairs": 13,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.2112199353023082,
+      "A7": 0.9336190223545358,
+      "noise_level": 0.00833723425680218,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.001,
+    "error_max": 0.002,
+    "error_p99": 0.0019,
+    "resolution_bits_max": 16.457637380991763,
+    "resolution_bits_p99": 16.507637380991763
+  },
+  {
+    "run_id": 25,
+    "config_name": "Fault-Tolerant",
+    "num_sensors": 16,
+    "pole_pairs": 13,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.19696139702316517,
+      "A7": 0.9847258387692864,
+      "noise_level": 0.008926559577183999,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.001,
+    "error_max": 0.002,
+    "error_p99": 0.0019,
+    "resolution_bits_max": 16.457637380991763,
+    "resolution_bits_p99": 16.507637380991763
+  },
+  {
+    "run_id": 26,
+    "config_name": "Fault-Tolerant",
+    "num_sensors": 16,
+    "pole_pairs": 13,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.2138132751879187,
+      "A7": 0.9704570813356542,
+      "noise_level": 0.009363196064889555,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.001,
+    "error_max": 0.002,
+    "error_p99": 0.0019,
+    "resolution_bits_max": 16.457637380991763,
+    "resolution_bits_p99": 16.507637380991763
+  },
+  {
+    "run_id": 27,
+    "config_name": "Fault-Tolerant",
+    "num_sensors": 16,
+    "pole_pairs": 13,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.2112199353023082,
+      "A7": 0.9336190223545358,
+      "noise_level": 0.00833723425680218,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.001,
+    "error_max": 0.002,
+    "error_p99": 0.0019,
+    "resolution_bits_max": 16.457637380991763,
+    "resolution_bits_p99": 16.507637380991763
+  },
+  {
+    "run_id": 28,
+    "config_name": "Fault-Tolerant",
+    "num_sensors": 16,
+    "pole_pairs": 13,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.19696139702316517,
+      "A7": 0.9847258387692864,
+      "noise_level": 0.008926559577183999,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.001,
+    "error_max": 0.002,
+    "error_p99": 0.0019,
+    "resolution_bits_max": 16.457637380991763,
+    "resolution_bits_p99": 16.507637380991763
+  },
+  {
+    "run_id": 29,
+    "config_name": "Fault-Tolerant",
+    "num_sensors": 16,
+    "pole_pairs": 13,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.2138132751879187,
+      "A7": 0.9704570813356542,
+      "noise_level": 0.009363196064889555,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.001,
+    "error_max": 0.002,
+    "error_p99": 0.0019,
+    "resolution_bits_max": 16.457637380991763,
+    "resolution_bits_p99": 16.507637380991763
+  },
+  {
+    "run_id": 30,
+    "config_name": "Fault-Tolerant",
+    "num_sensors": 16,
+    "pole_pairs": 13,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.2112199353023082,
+      "A7": 0.9336190223545358,
+      "noise_level": 0.00833723425680218,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.001,
+    "error_max": 0.002,
+    "error_p99": 0.0019,
+    "resolution_bits_max": 16.457637380991763,
+    "resolution_bits_p99": 16.507637380991763
+  },
+  {
+    "run_id": 31,
+    "config_name": "Fault-Tolerant",
+    "num_sensors": 16,
+    "pole_pairs": 13,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.19696139702316517,
+      "A7": 0.9847258387692864,
+      "noise_level": 0.008926559577183999,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.001,
+    "error_max": 0.002,
+    "error_p99": 0.0019,
+    "resolution_bits_max": 16.457637380991763,
+    "resolution_bits_p99": 16.507637380991763
+  },
+  {
+    "run_id": 32,
+    "config_name": "Fault-Tolerant",
+    "num_sensors": 16,
+    "pole_pairs": 13,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.2138132751879187,
+      "A7": 0.9704570813356542,
+      "noise_level": 0.009363196064889555,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.001,
+    "error_max": 0.002,
+    "error_p99": 0.0019,
+    "resolution_bits_max": 16.457637380991763,
+    "resolution_bits_p99": 16.507637380991763
+  },
+  {
+    "run_id": 33,
+    "config_name": "Fault-Tolerant",
+    "num_sensors": 16,
+    "pole_pairs": 13,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.2112199353023082,
+      "A7": 0.9336190223545358,
+      "noise_level": 0.00833723425680218,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.001,
+    "error_max": 0.002,
+    "error_p99": 0.0019,
+    "resolution_bits_max": 16.457637380991763,
+    "resolution_bits_p99": 16.507637380991763
+  },
+  {
+    "run_id": 34,
+    "config_name": "Fault-Tolerant",
+    "num_sensors": 16,
+    "pole_pairs": 13,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.19696139702316517,
+      "A7": 0.9847258387692864,
+      "noise_level": 0.008926559577183999,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.001,
+    "error_max": 0.002,
+    "error_p99": 0.0019,
+    "resolution_bits_max": 16.457637380991763,
+    "resolution_bits_p99": 16.507637380991763
+  },
+  {
+    "run_id": 35,
+    "config_name": "Fault-Tolerant",
+    "num_sensors": 16,
+    "pole_pairs": 13,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.2138132751879187,
+      "A7": 0.9704570813356542,
+      "noise_level": 0.009363196064889555,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.001,
+    "error_max": 0.002,
+    "error_p99": 0.0019,
+    "resolution_bits_max": 16.457637380991763,
+    "resolution_bits_p99": 16.507637380991763
+  },
+  {
+    "run_id": 36,
+    "config_name": "Fault-Tolerant",
+    "num_sensors": 16,
+    "pole_pairs": 13,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.2112199353023082,
+      "A7": 0.9336190223545358,
+      "noise_level": 0.00833723425680218,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.001,
+    "error_max": 0.002,
+    "error_p99": 0.0019,
+    "resolution_bits_max": 16.457637380991763,
+    "resolution_bits_p99": 16.507637380991763
+  },
+  {
+    "run_id": 37,
+    "config_name": "Fault-Tolerant",
+    "num_sensors": 16,
+    "pole_pairs": 13,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.19696139702316517,
+      "A7": 0.9847258387692864,
+      "noise_level": 0.008926559577183999,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.001,
+    "error_max": 0.002,
+    "error_p99": 0.0019,
+    "resolution_bits_max": 16.457637380991763,
+    "resolution_bits_p99": 16.507637380991763
+  },
+  {
+    "run_id": 38,
+    "config_name": "Fault-Tolerant",
+    "num_sensors": 16,
+    "pole_pairs": 13,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.2138132751879187,
+      "A7": 0.9704570813356542,
+      "noise_level": 0.009363196064889555,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.001,
+    "error_max": 0.002,
+    "error_p99": 0.0019,
+    "resolution_bits_max": 16.457637380991763,
+    "resolution_bits_p99": 16.507637380991763
+  },
+  {
+    "run_id": 39,
+    "config_name": "Fault-Tolerant",
+    "num_sensors": 16,
+    "pole_pairs": 13,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.2112199353023082,
+      "A7": 0.9336190223545358,
+      "noise_level": 0.00833723425680218,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.001,
+    "error_max": 0.002,
+    "error_p99": 0.0019,
+    "resolution_bits_max": 16.457637380991763,
+    "resolution_bits_p99": 16.507637380991763
+  },
+  {
+    "run_id": 40,
+    "config_name": "Fault-Tolerant",
+    "num_sensors": 16,
+    "pole_pairs": 13,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.19696139702316517,
+      "A7": 0.9847258387692864,
+      "noise_level": 0.008926559577183999,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.001,
+    "error_max": 0.002,
+    "error_p99": 0.0019,
+    "resolution_bits_max": 16.457637380991763,
+    "resolution_bits_p99": 16.507637380991763
+  },
+  {
+    "run_id": 41,
+    "config_name": "Fault-Tolerant",
+    "num_sensors": 16,
+    "pole_pairs": 13,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.2138132751879187,
+      "A7": 0.9704570813356542,
+      "noise_level": 0.009363196064889555,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.001,
+    "error_max": 0.002,
+    "error_p99": 0.0019,
+    "resolution_bits_max": 16.457637380991763,
+    "resolution_bits_p99": 16.507637380991763
+  },
+  {
+    "run_id": 42,
+    "config_name": "Fault-Tolerant",
+    "num_sensors": 16,
+    "pole_pairs": 13,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.2112199353023082,
+      "A7": 0.9336190223545358,
+      "noise_level": 0.00833723425680218,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.001,
+    "error_max": 0.002,
+    "error_p99": 0.0019,
+    "resolution_bits_max": 16.457637380991763,
+    "resolution_bits_p99": 16.507637380991763
+  },
+  {
+    "run_id": 43,
+    "config_name": "Fault-Tolerant",
+    "num_sensors": 16,
+    "pole_pairs": 13,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.19696139702316517,
+      "A7": 0.9847258387692864,
+      "noise_level": 0.008926559577183999,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.001,
+    "error_max": 0.002,
+    "error_p99": 0.0019,
+    "resolution_bits_max": 16.457637380991763,
+    "resolution_bits_p99": 16.507637380991763
+  },
+  {
+    "run_id": 44,
+    "config_name": "Fault-Tolerant",
+    "num_sensors": 16,
+    "pole_pairs": 13,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.2138132751879187,
+      "A7": 0.9704570813356542,
+      "noise_level": 0.009363196064889555,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.001,
+    "error_max": 0.002,
+    "error_p99": 0.0019,
+    "resolution_bits_max": 16.457637380991763,
+    "resolution_bits_p99": 16.507637380991763
+  },
+  {
+    "run_id": 45,
+    "config_name": "Fault-Tolerant",
+    "num_sensors": 16,
+    "pole_pairs": 13,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.2112199353023082,
+      "A7": 0.9336190223545358,
+      "noise_level": 0.00833723425680218,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.001,
+    "error_max": 0.002,
+    "error_p99": 0.0019,
+    "resolution_bits_max": 16.457637380991763,
+    "resolution_bits_p99": 16.507637380991763
+  },
+  {
+    "run_id": 46,
+    "config_name": "Fault-Tolerant",
+    "num_sensors": 16,
+    "pole_pairs": 13,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.19696139702316517,
+      "A7": 0.9847258387692864,
+      "noise_level": 0.008926559577183999,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.001,
+    "error_max": 0.002,
+    "error_p99": 0.0019,
+    "resolution_bits_max": 16.457637380991763,
+    "resolution_bits_p99": 16.507637380991763
+  },
+  {
+    "run_id": 47,
+    "config_name": "Fault-Tolerant",
+    "num_sensors": 16,
+    "pole_pairs": 13,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.2138132751879187,
+      "A7": 0.9704570813356542,
+      "noise_level": 0.009363196064889555,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.001,
+    "error_max": 0.002,
+    "error_p99": 0.0019,
+    "resolution_bits_max": 16.457637380991763,
+    "resolution_bits_p99": 16.507637380991763
+  },
+  {
+    "run_id": 48,
+    "config_name": "Fault-Tolerant",
+    "num_sensors": 16,
+    "pole_pairs": 13,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.20095472308320633,
+      "A7": 1.053921576657513,
+      "noise_level": 0.011673254272484127,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.001,
+    "error_max": 0.002,
+    "error_p99": 0.0019,
+    "resolution_bits_max": 16.457637380991763,
+    "resolution_bits_p99": 16.507637380991763
+  },
+  {
+    "run_id": 49,
+    "config_name": "Fault-Tolerant",
+    "num_sensors": 16,
+    "pole_pairs": 13,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.19756236099939437,
+      "A7": 1.047184840251191,
+      "noise_level": 0.010304199897145195,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.001,
+    "error_max": 0.002,
+    "error_p99": 0.0019,
+    "resolution_bits_max": 16.457637380991763,
+    "resolution_bits_p99": 16.507637380991763
+  },
+  {
+    "run_id": 50,
+    "config_name": "Fault-Tolerant",
+    "num_sensors": 16,
+    "pole_pairs": 13,
+    "num_failures": 2,
+    "parameters": {
+      "A1": 0.200069589840536,
+      "A7": 0.941938773427805,
+      "noise_level": 0.009415979333414447,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.001,
+    "error_max": 0.002,
+    "error_p99": 0.0019,
+    "resolution_bits_max": 16.457637380991763,
+    "resolution_bits_p99": 16.507637380991763
+  }
+]

@@ -1,0 +1,37 @@
+Comparative Analysis Summary
+===========================
+
+Configuration        Failures        Resolution (bits)    Error (degrees)     
+-------------------- --------------- -------------------- --------------------
+Standard             No Failures     16.30                0.002207            
+Standard             One Failure     16.00                0.002705            
+Standard             Two Failures    16.00                0.002705            
+Standard             Three Failures  16.00                0.002705            
+Medium               No Failures     16.40                0.002047            
+Medium               One Failure     16.46                0.001960            
+Medium               Two Failures    16.46                0.001960            
+Medium               Three Failures  16.46                0.001960            
+High                 No Failures     16.71                0.001655            
+High                 One Failure     16.80                0.001551            
+High                 Two Failures    16.80                0.001551            
+High                 Three Failures  16.80                0.001551            
+Fault-Tolerant       No Failures     16.51                0.001900            
+Fault-Tolerant       One Failure     16.51                0.001900            
+Fault-Tolerant       Two Failures    16.51                0.001900            
+Fault-Tolerant       Three Failures  16.51                0.001900            
+
+Paper Claims:
+------------
+Resolution: 17-18 bits (±0.002°-0.003°)
+Functionality with 1-3 failed sensors
+
+Validation Summary:
+-----------------
+✗ Standard: DOES NOT VALIDATE resolution claim with 16.30 bits
+✓ Standard: VALIDATES fault tolerance claim with up to 3 failed sensors
+✗ Medium: DOES NOT VALIDATE resolution claim with 16.40 bits
+✓ Medium: VALIDATES fault tolerance claim with up to 3 failed sensors
+✗ High: DOES NOT VALIDATE resolution claim with 16.71 bits
+✓ High: VALIDATES fault tolerance claim with up to 3 failed sensors
+✗ Fault-Tolerant: DOES NOT VALIDATE resolution claim with 16.51 bits
+✓ Fault-Tolerant: VALIDATES fault tolerance claim with up to 3 failed sensors

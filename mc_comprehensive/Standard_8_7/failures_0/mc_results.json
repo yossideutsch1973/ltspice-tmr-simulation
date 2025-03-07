@@ -1,0 +1,971 @@
+[
+  {
+    "run_id": 0,
+    "config_name": "Standard",
+    "num_sensors": 8,
+    "pole_pairs": 7,
+    "num_failures": 0,
+    "parameters": {
+      "A1": 0.19008217176459363,
+      "A7": 1.0119256546370439,
+      "noise_level": 0.008528717691437657,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0010149224023184888,
+    "error_max": 0.0020298448046369775,
+    "error_p99": 0.0019283525644051285,
+    "resolution_bits_max": 16.436267953157518,
+    "resolution_bits_p99": 16.48626795315752
+  },
+  {
+    "run_id": 1,
+    "config_name": "Standard",
+    "num_sensors": 8,
+    "pole_pairs": 7,
+    "num_failures": 0,
+    "parameters": {
+      "A1": 0.18046425203205974,
+      "A7": 0.9972093267875599,
+      "noise_level": 0.009293439479035432,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0013081155484082532,
+    "error_max": 0.0026162310968165063,
+    "error_p99": 0.002485419541975681,
+    "resolution_bits_max": 16.070147398448707,
+    "resolution_bits_p99": 16.120147398448708
+  },
+  {
+    "run_id": 2,
+    "config_name": "Standard",
+    "num_sensors": 8,
+    "pole_pairs": 7,
+    "num_failures": 0,
+    "parameters": {
+      "A1": 0.19284370252186286,
+      "A7": 1.0159900953317589,
+      "noise_level": 0.01132519086159477,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0011719004320987143,
+    "error_max": 0.0023438008641974285,
+    "error_p99": 0.002226610820987557,
+    "resolution_bits_max": 16.228787381384784,
+    "resolution_bits_p99": 16.278787381384785
+  },
+  {
+    "run_id": 3,
+    "config_name": "Standard",
+    "num_sensors": 8,
+    "pole_pairs": 7,
+    "num_failures": 0,
+    "parameters": {
+      "A1": 0.19008217176459363,
+      "A7": 1.0119256546370439,
+      "noise_level": 0.008528717691437657,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0010149224023184888,
+    "error_max": 0.0020298448046369775,
+    "error_p99": 0.0019283525644051285,
+    "resolution_bits_max": 16.436267953157518,
+    "resolution_bits_p99": 16.48626795315752
+  },
+  {
+    "run_id": 4,
+    "config_name": "Standard",
+    "num_sensors": 8,
+    "pole_pairs": 7,
+    "num_failures": 0,
+    "parameters": {
+      "A1": 0.18046425203205974,
+      "A7": 0.9972093267875599,
+      "noise_level": 0.009293439479035432,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0013081155484082532,
+    "error_max": 0.0026162310968165063,
+    "error_p99": 0.002485419541975681,
+    "resolution_bits_max": 16.070147398448707,
+    "resolution_bits_p99": 16.120147398448708
+  },
+  {
+    "run_id": 5,
+    "config_name": "Standard",
+    "num_sensors": 8,
+    "pole_pairs": 7,
+    "num_failures": 0,
+    "parameters": {
+      "A1": 0.19284370252186286,
+      "A7": 1.0159900953317589,
+      "noise_level": 0.01132519086159477,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0011719004320987143,
+    "error_max": 0.0023438008641974285,
+    "error_p99": 0.002226610820987557,
+    "resolution_bits_max": 16.228787381384784,
+    "resolution_bits_p99": 16.278787381384785
+  },
+  {
+    "run_id": 6,
+    "config_name": "Standard",
+    "num_sensors": 8,
+    "pole_pairs": 7,
+    "num_failures": 0,
+    "parameters": {
+      "A1": 0.19008217176459363,
+      "A7": 1.0119256546370439,
+      "noise_level": 0.008528717691437657,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0010149224023184888,
+    "error_max": 0.0020298448046369775,
+    "error_p99": 0.0019283525644051285,
+    "resolution_bits_max": 16.436267953157518,
+    "resolution_bits_p99": 16.48626795315752
+  },
+  {
+    "run_id": 7,
+    "config_name": "Standard",
+    "num_sensors": 8,
+    "pole_pairs": 7,
+    "num_failures": 0,
+    "parameters": {
+      "A1": 0.18046425203205974,
+      "A7": 0.9972093267875599,
+      "noise_level": 0.009293439479035432,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0013081155484082532,
+    "error_max": 0.0026162310968165063,
+    "error_p99": 0.002485419541975681,
+    "resolution_bits_max": 16.070147398448707,
+    "resolution_bits_p99": 16.120147398448708
+  },
+  {
+    "run_id": 8,
+    "config_name": "Standard",
+    "num_sensors": 8,
+    "pole_pairs": 7,
+    "num_failures": 0,
+    "parameters": {
+      "A1": 0.19284370252186286,
+      "A7": 1.0159900953317589,
+      "noise_level": 0.01132519086159477,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0011719004320987143,
+    "error_max": 0.0023438008641974285,
+    "error_p99": 0.002226610820987557,
+    "resolution_bits_max": 16.228787381384784,
+    "resolution_bits_p99": 16.278787381384785
+  },
+  {
+    "run_id": 9,
+    "config_name": "Standard",
+    "num_sensors": 8,
+    "pole_pairs": 7,
+    "num_failures": 0,
+    "parameters": {
+      "A1": 0.19008217176459363,
+      "A7": 1.0119256546370439,
+      "noise_level": 0.008528717691437657,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0010149224023184888,
+    "error_max": 0.0020298448046369775,
+    "error_p99": 0.0019283525644051285,
+    "resolution_bits_max": 16.436267953157518,
+    "resolution_bits_p99": 16.48626795315752
+  },
+  {
+    "run_id": 10,
+    "config_name": "Standard",
+    "num_sensors": 8,
+    "pole_pairs": 7,
+    "num_failures": 0,
+    "parameters": {
+      "A1": 0.18046425203205974,
+      "A7": 0.9972093267875599,
+      "noise_level": 0.009293439479035432,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0013081155484082532,
+    "error_max": 0.0026162310968165063,
+    "error_p99": 0.002485419541975681,
+    "resolution_bits_max": 16.070147398448707,
+    "resolution_bits_p99": 16.120147398448708
+  },
+  {
+    "run_id": 11,
+    "config_name": "Standard",
+    "num_sensors": 8,
+    "pole_pairs": 7,
+    "num_failures": 0,
+    "parameters": {
+      "A1": 0.19284370252186286,
+      "A7": 1.0159900953317589,
+      "noise_level": 0.01132519086159477,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0011719004320987143,
+    "error_max": 0.0023438008641974285,
+    "error_p99": 0.002226610820987557,
+    "resolution_bits_max": 16.228787381384784,
+    "resolution_bits_p99": 16.278787381384785
+  },
+  {
+    "run_id": 12,
+    "config_name": "Standard",
+    "num_sensors": 8,
+    "pole_pairs": 7,
+    "num_failures": 0,
+    "parameters": {
+      "A1": 0.19008217176459363,
+      "A7": 1.0119256546370439,
+      "noise_level": 0.008528717691437657,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0010149224023184888,
+    "error_max": 0.0020298448046369775,
+    "error_p99": 0.0019283525644051285,
+    "resolution_bits_max": 16.436267953157518,
+    "resolution_bits_p99": 16.48626795315752
+  },
+  {
+    "run_id": 13,
+    "config_name": "Standard",
+    "num_sensors": 8,
+    "pole_pairs": 7,
+    "num_failures": 0,
+    "parameters": {
+      "A1": 0.18046425203205974,
+      "A7": 0.9972093267875599,
+      "noise_level": 0.009293439479035432,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0013081155484082532,
+    "error_max": 0.0026162310968165063,
+    "error_p99": 0.002485419541975681,
+    "resolution_bits_max": 16.070147398448707,
+    "resolution_bits_p99": 16.120147398448708
+  },
+  {
+    "run_id": 14,
+    "config_name": "Standard",
+    "num_sensors": 8,
+    "pole_pairs": 7,
+    "num_failures": 0,
+    "parameters": {
+      "A1": 0.19284370252186286,
+      "A7": 1.0159900953317589,
+      "noise_level": 0.01132519086159477,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0011719004320987143,
+    "error_max": 0.0023438008641974285,
+    "error_p99": 0.002226610820987557,
+    "resolution_bits_max": 16.228787381384784,
+    "resolution_bits_p99": 16.278787381384785
+  },
+  {
+    "run_id": 15,
+    "config_name": "Standard",
+    "num_sensors": 8,
+    "pole_pairs": 7,
+    "num_failures": 0,
+    "parameters": {
+      "A1": 0.19008217176459363,
+      "A7": 1.0119256546370439,
+      "noise_level": 0.008528717691437657,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0010149224023184888,
+    "error_max": 0.0020298448046369775,
+    "error_p99": 0.0019283525644051285,
+    "resolution_bits_max": 16.436267953157518,
+    "resolution_bits_p99": 16.48626795315752
+  },
+  {
+    "run_id": 16,
+    "config_name": "Standard",
+    "num_sensors": 8,
+    "pole_pairs": 7,
+    "num_failures": 0,
+    "parameters": {
+      "A1": 0.18046425203205974,
+      "A7": 0.9972093267875599,
+      "noise_level": 0.009293439479035432,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0013081155484082532,
+    "error_max": 0.0026162310968165063,
+    "error_p99": 0.002485419541975681,
+    "resolution_bits_max": 16.070147398448707,
+    "resolution_bits_p99": 16.120147398448708
+  },
+  {
+    "run_id": 17,
+    "config_name": "Standard",
+    "num_sensors": 8,
+    "pole_pairs": 7,
+    "num_failures": 0,
+    "parameters": {
+      "A1": 0.19284370252186286,
+      "A7": 1.0159900953317589,
+      "noise_level": 0.01132519086159477,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0011719004320987143,
+    "error_max": 0.0023438008641974285,
+    "error_p99": 0.002226610820987557,
+    "resolution_bits_max": 16.228787381384784,
+    "resolution_bits_p99": 16.278787381384785
+  },
+  {
+    "run_id": 18,
+    "config_name": "Standard",
+    "num_sensors": 8,
+    "pole_pairs": 7,
+    "num_failures": 0,
+    "parameters": {
+      "A1": 0.19008217176459363,
+      "A7": 1.0119256546370439,
+      "noise_level": 0.008528717691437657,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0010149224023184888,
+    "error_max": 0.0020298448046369775,
+    "error_p99": 0.0019283525644051285,
+    "resolution_bits_max": 16.436267953157518,
+    "resolution_bits_p99": 16.48626795315752
+  },
+  {
+    "run_id": 19,
+    "config_name": "Standard",
+    "num_sensors": 8,
+    "pole_pairs": 7,
+    "num_failures": 0,
+    "parameters": {
+      "A1": 0.18046425203205974,
+      "A7": 0.9972093267875599,
+      "noise_level": 0.009293439479035432,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0013081155484082532,
+    "error_max": 0.0026162310968165063,
+    "error_p99": 0.002485419541975681,
+    "resolution_bits_max": 16.070147398448707,
+    "resolution_bits_p99": 16.120147398448708
+  },
+  {
+    "run_id": 20,
+    "config_name": "Standard",
+    "num_sensors": 8,
+    "pole_pairs": 7,
+    "num_failures": 0,
+    "parameters": {
+      "A1": 0.19284370252186286,
+      "A7": 1.0159900953317589,
+      "noise_level": 0.01132519086159477,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0011719004320987143,
+    "error_max": 0.0023438008641974285,
+    "error_p99": 0.002226610820987557,
+    "resolution_bits_max": 16.228787381384784,
+    "resolution_bits_p99": 16.278787381384785
+  },
+  {
+    "run_id": 21,
+    "config_name": "Standard",
+    "num_sensors": 8,
+    "pole_pairs": 7,
+    "num_failures": 0,
+    "parameters": {
+      "A1": 0.19008217176459363,
+      "A7": 1.0119256546370439,
+      "noise_level": 0.008528717691437657,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0010149224023184888,
+    "error_max": 0.0020298448046369775,
+    "error_p99": 0.0019283525644051285,
+    "resolution_bits_max": 16.436267953157518,
+    "resolution_bits_p99": 16.48626795315752
+  },
+  {
+    "run_id": 22,
+    "config_name": "Standard",
+    "num_sensors": 8,
+    "pole_pairs": 7,
+    "num_failures": 0,
+    "parameters": {
+      "A1": 0.18046425203205974,
+      "A7": 0.9972093267875599,
+      "noise_level": 0.009293439479035432,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0013081155484082532,
+    "error_max": 0.0026162310968165063,
+    "error_p99": 0.002485419541975681,
+    "resolution_bits_max": 16.070147398448707,
+    "resolution_bits_p99": 16.120147398448708
+  },
+  {
+    "run_id": 23,
+    "config_name": "Standard",
+    "num_sensors": 8,
+    "pole_pairs": 7,
+    "num_failures": 0,
+    "parameters": {
+      "A1": 0.19284370252186286,
+      "A7": 1.0159900953317589,
+      "noise_level": 0.01132519086159477,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0011719004320987143,
+    "error_max": 0.0023438008641974285,
+    "error_p99": 0.002226610820987557,
+    "resolution_bits_max": 16.228787381384784,
+    "resolution_bits_p99": 16.278787381384785
+  },
+  {
+    "run_id": 24,
+    "config_name": "Standard",
+    "num_sensors": 8,
+    "pole_pairs": 7,
+    "num_failures": 0,
+    "parameters": {
+      "A1": 0.19008217176459363,
+      "A7": 1.0119256546370439,
+      "noise_level": 0.008528717691437657,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0010149224023184888,
+    "error_max": 0.0020298448046369775,
+    "error_p99": 0.0019283525644051285,
+    "resolution_bits_max": 16.436267953157518,
+    "resolution_bits_p99": 16.48626795315752
+  },
+  {
+    "run_id": 25,
+    "config_name": "Standard",
+    "num_sensors": 8,
+    "pole_pairs": 7,
+    "num_failures": 0,
+    "parameters": {
+      "A1": 0.18046425203205974,
+      "A7": 0.9972093267875599,
+      "noise_level": 0.009293439479035432,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0013081155484082532,
+    "error_max": 0.0026162310968165063,
+    "error_p99": 0.002485419541975681,
+    "resolution_bits_max": 16.070147398448707,
+    "resolution_bits_p99": 16.120147398448708
+  },
+  {
+    "run_id": 26,
+    "config_name": "Standard",
+    "num_sensors": 8,
+    "pole_pairs": 7,
+    "num_failures": 0,
+    "parameters": {
+      "A1": 0.19284370252186286,
+      "A7": 1.0159900953317589,
+      "noise_level": 0.01132519086159477,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0011719004320987143,
+    "error_max": 0.0023438008641974285,
+    "error_p99": 0.002226610820987557,
+    "resolution_bits_max": 16.228787381384784,
+    "resolution_bits_p99": 16.278787381384785
+  },
+  {
+    "run_id": 27,
+    "config_name": "Standard",
+    "num_sensors": 8,
+    "pole_pairs": 7,
+    "num_failures": 0,
+    "parameters": {
+      "A1": 0.19008217176459363,
+      "A7": 1.0119256546370439,
+      "noise_level": 0.008528717691437657,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0010149224023184888,
+    "error_max": 0.0020298448046369775,
+    "error_p99": 0.0019283525644051285,
+    "resolution_bits_max": 16.436267953157518,
+    "resolution_bits_p99": 16.48626795315752
+  },
+  {
+    "run_id": 28,
+    "config_name": "Standard",
+    "num_sensors": 8,
+    "pole_pairs": 7,
+    "num_failures": 0,
+    "parameters": {
+      "A1": 0.18046425203205974,
+      "A7": 0.9972093267875599,
+      "noise_level": 0.009293439479035432,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0013081155484082532,
+    "error_max": 0.0026162310968165063,
+    "error_p99": 0.002485419541975681,
+    "resolution_bits_max": 16.070147398448707,
+    "resolution_bits_p99": 16.120147398448708
+  },
+  {
+    "run_id": 29,
+    "config_name": "Standard",
+    "num_sensors": 8,
+    "pole_pairs": 7,
+    "num_failures": 0,
+    "parameters": {
+      "A1": 0.19284370252186286,
+      "A7": 1.0159900953317589,
+      "noise_level": 0.01132519086159477,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0011719004320987143,
+    "error_max": 0.0023438008641974285,
+    "error_p99": 0.002226610820987557,
+    "resolution_bits_max": 16.228787381384784,
+    "resolution_bits_p99": 16.278787381384785
+  },
+  {
+    "run_id": 30,
+    "config_name": "Standard",
+    "num_sensors": 8,
+    "pole_pairs": 7,
+    "num_failures": 0,
+    "parameters": {
+      "A1": 0.19008217176459363,
+      "A7": 1.0119256546370439,
+      "noise_level": 0.008528717691437657,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0010149224023184888,
+    "error_max": 0.0020298448046369775,
+    "error_p99": 0.0019283525644051285,
+    "resolution_bits_max": 16.436267953157518,
+    "resolution_bits_p99": 16.48626795315752
+  },
+  {
+    "run_id": 31,
+    "config_name": "Standard",
+    "num_sensors": 8,
+    "pole_pairs": 7,
+    "num_failures": 0,
+    "parameters": {
+      "A1": 0.18046425203205974,
+      "A7": 0.9972093267875599,
+      "noise_level": 0.009293439479035432,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0013081155484082532,
+    "error_max": 0.0026162310968165063,
+    "error_p99": 0.002485419541975681,
+    "resolution_bits_max": 16.070147398448707,
+    "resolution_bits_p99": 16.120147398448708
+  },
+  {
+    "run_id": 32,
+    "config_name": "Standard",
+    "num_sensors": 8,
+    "pole_pairs": 7,
+    "num_failures": 0,
+    "parameters": {
+      "A1": 0.19284370252186286,
+      "A7": 1.0159900953317589,
+      "noise_level": 0.01132519086159477,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0011719004320987143,
+    "error_max": 0.0023438008641974285,
+    "error_p99": 0.002226610820987557,
+    "resolution_bits_max": 16.228787381384784,
+    "resolution_bits_p99": 16.278787381384785
+  },
+  {
+    "run_id": 33,
+    "config_name": "Standard",
+    "num_sensors": 8,
+    "pole_pairs": 7,
+    "num_failures": 0,
+    "parameters": {
+      "A1": 0.19008217176459363,
+      "A7": 1.0119256546370439,
+      "noise_level": 0.008528717691437657,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0010149224023184888,
+    "error_max": 0.0020298448046369775,
+    "error_p99": 0.0019283525644051285,
+    "resolution_bits_max": 16.436267953157518,
+    "resolution_bits_p99": 16.48626795315752
+  },
+  {
+    "run_id": 34,
+    "config_name": "Standard",
+    "num_sensors": 8,
+    "pole_pairs": 7,
+    "num_failures": 0,
+    "parameters": {
+      "A1": 0.18046425203205974,
+      "A7": 0.9972093267875599,
+      "noise_level": 0.009293439479035432,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0013081155484082532,
+    "error_max": 0.0026162310968165063,
+    "error_p99": 0.002485419541975681,
+    "resolution_bits_max": 16.070147398448707,
+    "resolution_bits_p99": 16.120147398448708
+  },
+  {
+    "run_id": 35,
+    "config_name": "Standard",
+    "num_sensors": 8,
+    "pole_pairs": 7,
+    "num_failures": 0,
+    "parameters": {
+      "A1": 0.19284370252186286,
+      "A7": 1.0159900953317589,
+      "noise_level": 0.01132519086159477,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0011719004320987143,
+    "error_max": 0.0023438008641974285,
+    "error_p99": 0.002226610820987557,
+    "resolution_bits_max": 16.228787381384784,
+    "resolution_bits_p99": 16.278787381384785
+  },
+  {
+    "run_id": 36,
+    "config_name": "Standard",
+    "num_sensors": 8,
+    "pole_pairs": 7,
+    "num_failures": 0,
+    "parameters": {
+      "A1": 0.19008217176459363,
+      "A7": 1.0119256546370439,
+      "noise_level": 0.008528717691437657,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0010149224023184888,
+    "error_max": 0.0020298448046369775,
+    "error_p99": 0.0019283525644051285,
+    "resolution_bits_max": 16.436267953157518,
+    "resolution_bits_p99": 16.48626795315752
+  },
+  {
+    "run_id": 37,
+    "config_name": "Standard",
+    "num_sensors": 8,
+    "pole_pairs": 7,
+    "num_failures": 0,
+    "parameters": {
+      "A1": 0.18046425203205974,
+      "A7": 0.9972093267875599,
+      "noise_level": 0.009293439479035432,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0013081155484082532,
+    "error_max": 0.0026162310968165063,
+    "error_p99": 0.002485419541975681,
+    "resolution_bits_max": 16.070147398448707,
+    "resolution_bits_p99": 16.120147398448708
+  },
+  {
+    "run_id": 38,
+    "config_name": "Standard",
+    "num_sensors": 8,
+    "pole_pairs": 7,
+    "num_failures": 0,
+    "parameters": {
+      "A1": 0.19284370252186286,
+      "A7": 1.0159900953317589,
+      "noise_level": 0.01132519086159477,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0011719004320987143,
+    "error_max": 0.0023438008641974285,
+    "error_p99": 0.002226610820987557,
+    "resolution_bits_max": 16.228787381384784,
+    "resolution_bits_p99": 16.278787381384785
+  },
+  {
+    "run_id": 39,
+    "config_name": "Standard",
+    "num_sensors": 8,
+    "pole_pairs": 7,
+    "num_failures": 0,
+    "parameters": {
+      "A1": 0.19008217176459363,
+      "A7": 1.0119256546370439,
+      "noise_level": 0.008528717691437657,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0010149224023184888,
+    "error_max": 0.0020298448046369775,
+    "error_p99": 0.0019283525644051285,
+    "resolution_bits_max": 16.436267953157518,
+    "resolution_bits_p99": 16.48626795315752
+  },
+  {
+    "run_id": 40,
+    "config_name": "Standard",
+    "num_sensors": 8,
+    "pole_pairs": 7,
+    "num_failures": 0,
+    "parameters": {
+      "A1": 0.18046425203205974,
+      "A7": 0.9972093267875599,
+      "noise_level": 0.009293439479035432,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0013081155484082532,
+    "error_max": 0.0026162310968165063,
+    "error_p99": 0.002485419541975681,
+    "resolution_bits_max": 16.070147398448707,
+    "resolution_bits_p99": 16.120147398448708
+  },
+  {
+    "run_id": 41,
+    "config_name": "Standard",
+    "num_sensors": 8,
+    "pole_pairs": 7,
+    "num_failures": 0,
+    "parameters": {
+      "A1": 0.19284370252186286,
+      "A7": 1.0159900953317589,
+      "noise_level": 0.01132519086159477,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0011719004320987143,
+    "error_max": 0.0023438008641974285,
+    "error_p99": 0.002226610820987557,
+    "resolution_bits_max": 16.228787381384784,
+    "resolution_bits_p99": 16.278787381384785
+  },
+  {
+    "run_id": 42,
+    "config_name": "Standard",
+    "num_sensors": 8,
+    "pole_pairs": 7,
+    "num_failures": 0,
+    "parameters": {
+      "A1": 0.19008217176459363,
+      "A7": 1.0119256546370439,
+      "noise_level": 0.008528717691437657,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0010149224023184888,
+    "error_max": 0.0020298448046369775,
+    "error_p99": 0.0019283525644051285,
+    "resolution_bits_max": 16.436267953157518,
+    "resolution_bits_p99": 16.48626795315752
+  },
+  {
+    "run_id": 43,
+    "config_name": "Standard",
+    "num_sensors": 8,
+    "pole_pairs": 7,
+    "num_failures": 0,
+    "parameters": {
+      "A1": 0.18046425203205974,
+      "A7": 0.9972093267875599,
+      "noise_level": 0.009293439479035432,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0013081155484082532,
+    "error_max": 0.0026162310968165063,
+    "error_p99": 0.002485419541975681,
+    "resolution_bits_max": 16.070147398448707,
+    "resolution_bits_p99": 16.120147398448708
+  },
+  {
+    "run_id": 44,
+    "config_name": "Standard",
+    "num_sensors": 8,
+    "pole_pairs": 7,
+    "num_failures": 0,
+    "parameters": {
+      "A1": 0.19284370252186286,
+      "A7": 1.0159900953317589,
+      "noise_level": 0.01132519086159477,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0011719004320987143,
+    "error_max": 0.0023438008641974285,
+    "error_p99": 0.002226610820987557,
+    "resolution_bits_max": 16.228787381384784,
+    "resolution_bits_p99": 16.278787381384785
+  },
+  {
+    "run_id": 45,
+    "config_name": "Standard",
+    "num_sensors": 8,
+    "pole_pairs": 7,
+    "num_failures": 0,
+    "parameters": {
+      "A1": 0.19008217176459363,
+      "A7": 1.0119256546370439,
+      "noise_level": 0.008528717691437657,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0010149224023184888,
+    "error_max": 0.0020298448046369775,
+    "error_p99": 0.0019283525644051285,
+    "resolution_bits_max": 16.436267953157518,
+    "resolution_bits_p99": 16.48626795315752
+  },
+  {
+    "run_id": 46,
+    "config_name": "Standard",
+    "num_sensors": 8,
+    "pole_pairs": 7,
+    "num_failures": 0,
+    "parameters": {
+      "A1": 0.18046425203205974,
+      "A7": 0.9972093267875599,
+      "noise_level": 0.009293439479035432,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0013081155484082532,
+    "error_max": 0.0026162310968165063,
+    "error_p99": 0.002485419541975681,
+    "resolution_bits_max": 16.070147398448707,
+    "resolution_bits_p99": 16.120147398448708
+  },
+  {
+    "run_id": 47,
+    "config_name": "Standard",
+    "num_sensors": 8,
+    "pole_pairs": 7,
+    "num_failures": 0,
+    "parameters": {
+      "A1": 0.19284370252186286,
+      "A7": 1.0159900953317589,
+      "noise_level": 0.01132519086159477,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0011719004320987143,
+    "error_max": 0.0023438008641974285,
+    "error_p99": 0.002226610820987557,
+    "resolution_bits_max": 16.228787381384784,
+    "resolution_bits_p99": 16.278787381384785
+  },
+  {
+    "run_id": 48,
+    "config_name": "Standard",
+    "num_sensors": 8,
+    "pole_pairs": 7,
+    "num_failures": 0,
+    "parameters": {
+      "A1": 0.2092811524269588,
+      "A7": 0.9109489860605714,
+      "noise_level": 0.009270142069832218,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0011148294552540338,
+    "error_max": 0.0022296589105080676,
+    "error_p99": 0.002118175964982664,
+    "resolution_bits_max": 16.300814355041698,
+    "resolution_bits_p99": 16.3508143550417
+  },
+  {
+    "run_id": 49,
+    "config_name": "Standard",
+    "num_sensors": 8,
+    "pole_pairs": 7,
+    "num_failures": 0,
+    "parameters": {
+      "A1": 0.21192580835820796,
+      "A7": 0.9043285635830648,
+      "noise_level": 0.00871567233995151,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0012005025216130143,
+    "error_max": 0.0024010050432260286,
+    "error_p99": 0.002280954791064727,
+    "resolution_bits_max": 16.193998947090428,
+    "resolution_bits_p99": 16.24399894709043
+  },
+  {
+    "run_id": 50,
+    "config_name": "Standard",
+    "num_sensors": 8,
+    "pole_pairs": 7,
+    "num_failures": 0,
+    "parameters": {
+      "A1": 0.18283836510180582,
+      "A7": 0.9338270520746939,
+      "noise_level": 0.008515124298068335,
+      "theta": 360.0
+    },
+    "error_mean": 0,
+    "error_std": 0.0010013487186419346,
+    "error_max": 0.002002697437283869,
+    "error_p99": 0.0019025625654196757,
+    "resolution_bits_max": 16.455692902278276,
+    "resolution_bits_p99": 16.505692902278277
+  }
+]
