@@ -27,6 +27,21 @@ The schematic implementation has been enhanced based on professional engineering
 
 For a complete list of improvements, see `schematic_improvements.md`.
 
+## LTSpice Integration
+
+A key feature of this project is the ability to export schematics to LTSpice format for simulation and analysis. The integration includes:
+
+- Automated export of circuit diagrams to LTSpice netlist format
+- Component model library for all ICs used in the circuits
+- Simulation parameters for various analysis types (transient, AC, DC, Monte Carlo)
+- Temperature sweep capability for thermal analysis
+
+The exported files are stored in the `ltspice_models` directory and include:
+- Individual circuit netlist files (*.net)
+- Component model library (tmr_models.lib)
+
+See the `USER_GUIDE.md` for detailed instructions on using the LTSpice integration features.
+
 ## Setup and Installation
 
 1. Create a virtual environment:
@@ -64,12 +79,16 @@ The circuit is designed to provide high-precision signal conditioning for the TM
 ## File Structure
 
 - `tmr_schematic_drawer.py` - Main Python script that generates the schematics
+- `ltspice_integration.py` - Module for exporting schematics to LTSpice format
 - `requirements.txt` - Required Python packages
 - `schematic_improvements.md` - Summary of engineering enhancements
+- `REFACTORING.md` - Documentation of code design improvements and refactoring
 - `NEXT_SESSION_HANDOFF.md` - Instructions for continuing development
+- `USER_GUIDE.md` - Comprehensive guide for using the schematic tool
 - `simple_test.py`, `opamp_test.py` - Test scripts for SchemaDraw functionality
 - `tmr_stage1.py` - Simplified implementation of first stage for testing
 - `schematics/` - Output directory for generated circuit diagrams
+- `ltspice_models/` - Output directory for LTSpice model files and netlists
 
 ## Environment Setup and Running Scripts
 
@@ -92,12 +111,52 @@ The shell script handles:
 - Using the system Python directly
 - Installing required dependencies if needed
 
+### Command-Line Options
+
+The main script supports several command-line options:
+
+```
+Options:
+  --unit-size UNIT_SIZE   Set the unit size for drawings (default: 2.5)
+  --output-dir DIR        Set the output directory (default: schematics)
+  --ltspice-dir DIR       Set the LTSpice model directory (default: ltspice_models)
+  --format FORMAT [...]   Set the output format(s) (default: ['png'])
+```
+
+Example usage:
+```bash
+./run_script.sh tmr_schematic_drawer.py --unit-size 3.0 --format png svg
+```
+
 ### Troubleshooting
 
 If you encounter the error "ModuleNotFoundError: No module named 'encodings'", it's likely due to Python environment configuration issues. Use the provided `run_script.sh` to resolve this.
+
+### Code Structure
+
+The schematic drawer has been refactored to follow good software engineering practices:
+
+- Functional programming principles for improved maintainability
+- Common circuit elements extracted into reusable functions
+- Improved error handling with detailed error messages
+- Reduced code duplication throughout
+- Better type hints and documentation
+
+See `REFACTORING.md` for details on the code design improvements.
 
 ### SchemaDraw Version
 
 This project uses SchemaDraw 0.19, which has some API differences from earlier versions. Key changes:
 - Op-amp input anchors are named 'in1' and 'in2' (not 'in')
 - Different positioning and scaling parameters 
+
+For more details on API changes, see `schemdraw_api_changes.md`.
+
+## Documentation
+
+For detailed information, please refer to the following documents:
+
+- `USER_GUIDE.md` - Comprehensive guide for using the schematic tool
+- `schematic_improvements.md` - Details of engineering improvements made
+- `REFACTORING.md` - Code design improvements and refactoring
+- `NEXT_SESSION_HANDOFF.md` - Current status and next steps 
