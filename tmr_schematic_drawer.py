@@ -237,9 +237,9 @@ def add_input_protection(d: Drawing, input_point: Point,
     d += elm.Dot().at(tvs_pos)
     tvs_line_end = (tvs_pos[0], tvs_pos[1]-0.75)
     d += elm.Line().at(tvs_pos).to(tvs_line_end)
-    tvs_diode_end = (tvs_pos[0], tvs_pos[1]-1.5)
-    d += elm.Zener().at(tvs_line_end).to(tvs_diode_end).label('TVS')
-    d += elm.Ground().at(tvs_diode_end)
+    tvs_diode_pos = (tvs_pos[0], tvs_pos[1]-1.5)
+    d += elm.Zener().at(tvs_line_end).to(tvs_diode_pos).label('TVS')
+    d += elm.Ground().at(tvs_diode_pos)
     
     return d, tvs_pos
 
@@ -550,12 +550,15 @@ def draw_output_stage(d: Drawing, in_amp_pins: PinMap) -> None:
     add_technical_notes(d, (output_line_end[0] - 2, output_line_end[1] - 2), 'NOTES:', notes)
 
 @with_error_handling
-def draw_instrumentation_amplifier(unit_size: float = DEFAULT_UNIT_SIZE) -> None:
+def draw_instrumentation_amplifier(unit_size: float = DEFAULT_UNIT_SIZE) -> Drawing:
     """
     Draw the Stage 1: Instrumentation Amplifier circuit with TMR2305 sensor
     
     Args:
         unit_size: Size of the drawing units
+        
+    Returns:
+        The completed Drawing object
     """
     # Create a new drawing
     d = create_drawing(unit_size=unit_size)
@@ -577,18 +580,24 @@ def draw_instrumentation_amplifier(unit_size: float = DEFAULT_UNIT_SIZE) -> None
     
     # Save the completed drawing
     save_drawing(d, 'stage1_instrumentation_amplifier')
+    
+    # Return the drawing object
+    return d
 
 # =============================================================================
 # ACTIVE FILTER SECTION
 # =============================================================================
 
 @with_error_handling
-def draw_active_filter(unit_size: float = DEFAULT_UNIT_SIZE) -> None:
+def draw_active_filter(unit_size: float = DEFAULT_UNIT_SIZE) -> Drawing:
     """
     Draw the Stage 2: Active Low-Pass Filter circuit
     
     Args:
         unit_size: Size of the drawing units
+        
+    Returns:
+        The completed Drawing object
     """
     # Create a new drawing
     d = create_drawing(unit_size=unit_size)
@@ -700,18 +709,24 @@ def draw_active_filter(unit_size: float = DEFAULT_UNIT_SIZE) -> None:
     
     # Save the drawing
     save_drawing(d, 'stage2_active_lowpass_filter')
+    
+    # Return the drawing object
+    return d
 
 # =============================================================================
 # LEVEL SHIFTER SECTION
 # =============================================================================
 
 @with_error_handling
-def draw_level_shifter(unit_size: float = DEFAULT_UNIT_SIZE) -> None:
+def draw_level_shifter(unit_size: float = DEFAULT_UNIT_SIZE) -> Drawing:
     """
     Draw the Stage 3: Level Shifter circuit
     
     Args:
         unit_size: Size of the drawing units
+        
+    Returns:
+        The completed Drawing object
     """
     # Create a new drawing
     d = create_drawing(unit_size=unit_size)
@@ -728,350 +743,476 @@ def draw_level_shifter(unit_size: float = DEFAULT_UNIT_SIZE) -> None:
     input_point = (0, 0)
     d, tvs_pos = add_input_protection(d, input_point)
     
+    # Add main op-amp circuit
+    # Junction for R10 and R11
+    junction1 = (tvs_pos[0]+0.5, tvs_pos[1])
+    d += elm.Line().right(0.5).at(tvs_pos)
+    d += elm.Dot().at(junction1)
+    
+    # R10 resistor to non-inverting input
+    r10_end = (junction1[0]+2, junction1[1])
+    r10 = d.add(elm.Resistor().at(junction1).to(r10_end).label('R10\n10kΩ\n0.1%'))
+    
+    # OpAmp
+    opamp_pos = (r10_end[0]+2, junction1[1]-1.5)
+    opamp = d.add(elm.Opamp(leads=True).at(opamp_pos))
+    
+    # Get opamp terminals
+    op_in1 = opamp.anchors['in1']  # Non-inverting input
+    op_in2 = opamp.anchors['in2']  # Inverting input
+    op_out = opamp.anchors['out']  # Output
+    
+    d += elm.Label().label('OPA2387').at((opamp_pos[0], opamp_pos[1]+0.7))
+    d += elm.Label().label('Precision Op-Amp').at((opamp_pos[0], opamp_pos[1]+0.3)).color('blue')
+    
+    # Add power connections for opamp
+    add_opamp_power(d, opamp_pos)
+    
+    # Connect R10 to non-inverting input
+    r10_op_conn = (r10_end[0], op_in1[1])
+    d += elm.Line().at(r10_end).to(r10_op_conn)
+    d += elm.Dot().at(r10_op_conn)
+    d += elm.Line().at(r10_op_conn).to(op_in1)
+    
+    # 3.3V Precision Reference
+    vref_pos = (junction1[0]+1, junction1[1]-2)
+    vref = d.add(elm.Rect(w=1.5, h=1).at(vref_pos).label('REF3330\n3.3V\nPrecision\nReference', 'center'))
+    
+    # Add decoupling for reference
+    vref_right = (vref_pos[0]+1.5, vref_pos[1]+0.5)
+    vref_cap_pos = (vref_right[0]+0.5, vref_right[1])
+    vref_cap_end = (vref_cap_pos[0], vref_cap_pos[1]-1)
+    d += elm.Line().at(vref_right).to(vref_cap_pos)
+    d += elm.Capacitor().at(vref_cap_pos).to(vref_cap_end).label('100nF')
+    d += elm.Ground().at(vref_cap_end)
+    
+    # Connect vref to R11
+    vref_out = (vref_pos[0]+0.75, vref_pos[1]-0.5)
+    vref_r11_start = (vref_out[0], vref_out[1]-0.5)
+    r11_end = (r10_op_conn[0], vref_r11_start[1])
+    d += elm.Line().at(vref_out).to(vref_r11_start)
+    r11 = d.add(elm.Resistor().at(vref_r11_start).to(r11_end).label('R11\n6.8kΩ\n0.1%'))
+    
+    # Connect R11 to non-inverting input junction
+    d += elm.Line().at(r11_end).to(r10_op_conn)
+    d += elm.Dot().at(r10_op_conn)
+    
+    # Feedback network
+    # R12 from output to inverting input
+    op_out_dot = (op_out[0]+0.5, op_out[1])
+    d += elm.Line().at(op_out).to(op_out_dot)  # Connect op-amp output directly to the junction
+    d += elm.Dot().at(op_out_dot)
+    
+    r12_start = (op_out_dot[0], op_in2[1])
+    d += elm.Line().at(op_out_dot).to(r12_start)  # Connect junction to the start point of R12
+    r12_end = (op_in2[0]+1, op_in2[1])
+    r12 = d.add(elm.Resistor().at(r12_start).to(r12_end).label('R12\n10kΩ\n0.1%'))
+    
+    # Connect R12 to inverting input
+    d += elm.Line().at(r12_end).to(op_in2)
+    d += elm.Dot().at(op_in2)  # Add a dot at the inverting input to make the connection visible
+    
+    # R13 from inverting input to ground
+    r13_start = op_in2
+    r13_end = (op_in2[0], op_in2[1]-1.5)
+    r13 = d.add(elm.Resistor().at(r13_start).to(r13_end).label('R13\n4.99kΩ\n0.1%'))
+    d += elm.Ground().at(r13_end)
+    
+    # Output EMI filter
+    op_out_end = (op_out_dot[0]+1, op_out_dot[1])
+    d += elm.Line().at(op_out_dot).to(op_out_end)
+    filt_r_end = (op_out_end[0]+1, op_out_end[1])
+    filt_r = d.add(elm.Resistor().at(op_out_end).to(filt_r_end).label('33Ω'))
+    
+    filt_c_end = (filt_r_end[0], filt_r_end[1]-1.5)
+    filt_c = d.add(elm.Capacitor().at(filt_r_end).to(filt_c_end).label('100nF\nEMI'))
+    d += elm.Ground().at(filt_c_end)
+    
+    # Final output
+    output_end = (filt_r_end[0]+1, filt_r_end[1])
+    d += elm.Line().at(filt_r_end).to(output_end)
+    d += elm.Dot().at(output_end)
+    
+    # Add test point at output
+    add_test_point(d, output_end, 'TP4')
+    
+    # Add output label
+    d += elm.Label().label('To ADC\n(0-3.3V range)').at((output_end[0]+1, output_end[1]))
+    
+    # Add design notes
+    notes = [
+        'Level shifts bipolar ±2.5V signal to 0-3.3V range',
+        'Precision voltage reference ensures accuracy',
+        'EMI filter prevents noise coupling to ADC',
+        'Gain is set by R12/R13 = 10kΩ/4.99kΩ = 2'
+    ]
+    add_technical_notes(d, (junction1[0]+4, junction1[1]+3), 'NOTES:', notes)
+    
     # Save the drawing
     save_drawing(d, 'stage3_level_shifter')
+    
+    # Return the drawing object
+    return d
 
 # =============================================================================
 # MULTIPLEXER SECTION
 # =============================================================================
 
 @with_error_handling
-def draw_multiplexer(unit_size: float = DEFAULT_UNIT_SIZE) -> None:
+def draw_multiplexer(unit_size: float = DEFAULT_UNIT_SIZE) -> Drawing:
     """
     Draw the 16-Channel Multiplexer circuit
     
     Args:
         unit_size: Size of the drawing units
+        
+    Returns:
+        The completed Drawing object
     """
-    with schemdraw.Drawing() as d:
-        d.config(unit=unit_size)
-        d += elm.Label().label('16-CHANNEL MULTIPLEXING CIRCUIT', loc='top')
-        d += elm.Label().label('16-to-4 Analog Channel Selection', loc='top').at((0, -0.5)).color('blue')
+    # Create a new drawing
+    d = schemdraw.Drawing()
+    d.config(unit=unit_size)
+    
+    d += elm.Label().label('16-CHANNEL MULTIPLEXING CIRCUIT', loc='top')
+    d += elm.Label().label('16-to-4 Analog Channel Selection', loc='top').at((0, -0.5)).color('blue')
+    
+    # Main box for ADG1607
+    box = d.add(elm.Rect(w=8, h=12).label('ADG1607 16-Channel Analog Multiplexer', 'top'))
+    
+    # Get box corners
+    box_left = box.get_bbox()[0]
+    box_right = box.get_bbox()[2]
+    box_top = box.get_bbox()[3]
+    box_bottom = box.get_bbox()[1]
+    
+    # Add digital isolator for control signals
+    iso_left = box_left - 5
+    iso_top = box_top - 2
+    iso_box = d.add(elm.Rect(w=3, h=3).at((iso_left, iso_top)))
+    d += elm.Label().label('ADuM140x\nDigital Isolator').at((iso_left+1.5, iso_top+1.5))
+    
+    # Add microcontroller side
+    d += elm.Label().label('From\nMCU').at((iso_left-1.5, iso_top+1.5)).color('green')
+    
+    # Channel inputs (left side)
+    x_start = box_left
+    y_start = box_top - 2
+    spacing = 0.5
+    
+    # Add control inputs with isolation
+    for i, label in enumerate(['S0', 'S1', 'S2', 'S3']):
+        y = y_start - i * spacing
         
-        # Main box for ADG1607
-        box = d.add(elm.Rect(w=8, h=12).label('ADG1607 16-Channel Analog Multiplexer', 'top'))
-        
-        # Get box corners
-        box_left = box.get_bbox()[0]
-        box_right = box.get_bbox()[2]
-        box_top = box.get_bbox()[3]
-        box_bottom = box.get_bbox()[1]
-        
-        # Add digital isolator for control signals
-        iso_left = box_left - 5
-        iso_top = box_top - 2
-        iso_box = d.add(elm.Rect(w=3, h=3).at((iso_left, iso_top)))
-        d += elm.Label().label('ADuM140x\nDigital Isolator').at((iso_left+1.5, iso_top+1.5))
-        
-        # Add microcontroller side
-        d += elm.Label().label('From\nMCU').at((iso_left-1.5, iso_top+1.5)).color('green')
-        
-        # Channel inputs (left side)
-        x_start = box_left
-        y_start = box_top - 2
-        spacing = 0.5
-        
-        # Add control inputs with isolation
-        for i, label in enumerate(['S0', 'S1', 'S2', 'S3']):
-            y = y_start - i * spacing
-            
-            # Connect from isolator to multiplexer
-            iso_out = (iso_left+3, iso_top+0.5-(i*0.5))
-            iso_up = (iso_left+4, iso_top+0.5-(i*0.5))
-            y_connection = (iso_left+4, y)
-            mux_in = (box_left, y)
-            
-            # Fixed: Using .at() and .to() instead of directional methods with .at()
-            d += elm.Line().at(iso_out).to(iso_up)
-            d += elm.Line().at(iso_up).to(y_connection)
-            d += elm.Line().at(y_connection).to(mux_in)
-            
-            # Add pull-up resistor for each control line
-            pull_up_pos = (x_start-1.5, y)
-            pull_up_end = (pull_up_pos[0], pull_up_pos[1]+0.75)
-            
-            # Fixed: Using .at() and .to() instead of .up() with .at()
-            d += elm.Resistor().at(pull_up_pos).to(pull_up_end).label('4.7kΩ')
-            d += elm.Label().label('+3.3V').at((pull_up_pos[0], pull_up_pos[1]+1)).color('orange')
-            
-            # Connect to multiplexer
-            mux_conn1 = (x_start-1, y)
-            mux_conn2 = (x_start, y)
-            
-            # Fixed: Using .at() and .to() instead of directional methods with .at()
-            d += elm.Line().at(mux_conn1).to(mux_conn2)
-            d += elm.Label().label(label).at((x_start-1.2, y))
-        
-        # Add EN (Enable) input with pull-down
-        y_en = y_start - 4 * spacing
-        en_out = (iso_left+3, iso_top-1.5)
-        en_right = (iso_left+4, iso_top-1.5)
-        en_down = (iso_left+4, y_en)
-        mux_en = (box_left, y_en)
+        # Connect from isolator to multiplexer
+        iso_out = (iso_left+3, iso_top+0.5-(i*0.5))
+        iso_up = (iso_left+4, iso_top+0.5-(i*0.5))
+        y_connection = (iso_left+4, y)
+        mux_in = (box_left, y)
         
         # Fixed: Using .at() and .to() instead of directional methods with .at()
-        d += elm.Line().at(en_out).to(en_right)
-        d += elm.Line().at(en_right).to(en_down)
-        d += elm.Line().at(en_down).to(mux_en)
-        d += elm.Label().label('EN').at((x_start-1.2, y_en))
+        d += elm.Line().at(iso_out).to(iso_up)
+        d += elm.Line().at(iso_up).to(y_connection)
+        d += elm.Line().at(y_connection).to(mux_in)
         
-        # Add pull-down for EN
-        pull_down_pos = (x_start-1.5, y_en)
-        pull_down_end = (pull_down_pos[0], pull_down_pos[1]-0.75)
+        # Add pull-up resistor for each control line
+        pull_up_pos = (x_start-1.5, y)
+        pull_up_end = (pull_up_pos[0], pull_up_pos[1]+0.75)
+        
+        # Fixed: Using .at() and .to() instead of .up() with .at()
+        d += elm.Resistor().at(pull_up_pos).to(pull_up_end).label('4.7kΩ')
+        d += elm.Label().label('+3.3V').at((pull_up_pos[0], pull_up_pos[1]+1)).color('orange')
+        
+        # Connect to multiplexer
+        mux_conn1 = (x_start-1, y)
+        mux_conn2 = (x_start, y)
+        
+        # Fixed: Using .at() and .to() instead of directional methods with .at()
+        d += elm.Line().at(mux_conn1).to(mux_conn2)
+        d += elm.Label().label(label).at((x_start-1.2, y))
+    
+    # Add EN (Enable) input with pull-down
+    y_en = y_start - 4 * spacing
+    en_out = (iso_left+3, iso_top-1.5)
+    en_right = (iso_left+4, iso_top-1.5)
+    en_down = (iso_left+4, y_en)
+    mux_en = (box_left, y_en)
+    
+    # Fixed: Using .at() and .to() instead of directional methods with .at()
+    d += elm.Line().at(en_out).to(en_right)
+    d += elm.Line().at(en_right).to(en_down)
+    d += elm.Line().at(en_down).to(mux_en)
+    d += elm.Label().label('EN').at((x_start-1.2, y_en))
+    
+    # Add pull-down for EN
+    pull_down_pos = (x_start-1.5, y_en)
+    pull_down_end = (pull_down_pos[0], pull_down_pos[1]-0.75)
+    
+    # Fixed: Using .at() and .to() instead of .down() with .at()
+    d += elm.Dot().at(pull_down_pos)
+    d += elm.Resistor().at(pull_down_pos).to(pull_down_end).label('10kΩ')
+    d += elm.Ground().at(pull_down_end)
+    
+    # Add 16 input channels on the left
+    channel_start_y = box_top - 2
+    channel_spacing = 0.5
+    
+    # Add output channels on the right
+    x_end = box_right
+    
+    for i in range(4):
+        y = channel_start_y - i * spacing
+        
+        # Add output channel
+        out_end = (x_end+1, y)
+        
+        # Fixed: Using .at() and .to() instead of .right() with .at()
+        d += elm.Line().at((x_end, y)).to(out_end)
+        d += elm.Label().label(f'D{i}').at((x_end-0.5, y))
+        
+        # Add filter and buffer
+        filter_pos = (x_end+1, y)
+        filter_end = (filter_pos[0]+0.75, filter_pos[1])
+        
+        d += elm.Dot().at(filter_pos)
+        
+        # Fixed: Using .at() and .to() instead of .right() with .at()
+        d += elm.Resistor().at(filter_pos).to(filter_end).label('33Ω')
+        
+        # Add capacitor to ground
+        cap_pos = (filter_end[0], filter_end[1])
+        cap_down = (cap_pos[0], cap_pos[1]-0.5)
+        cap_end = (cap_pos[0], cap_pos[1]-1)
+        
+        d += elm.Dot().at(cap_pos)
         
         # Fixed: Using .at() and .to() instead of .down() with .at()
-        d += elm.Dot().at(pull_down_pos)
-        d += elm.Resistor().at(pull_down_pos).to(pull_down_end).label('10kΩ')
-        d += elm.Ground().at(pull_down_end)
+        d += elm.Line().at(cap_pos).to(cap_down)
+        d += elm.Capacitor().at(cap_down).to(cap_end).label('100pF')
+        d += elm.Ground().at(cap_end)
         
-        # Add 16 input channels on the left
-        channel_start_y = box_top - 2
-        channel_spacing = 0.5
+        # Add buffer op-amp
+        buffer_pos = (cap_pos[0]+1, cap_pos[1])
         
-        # Add output channels on the right
-        x_end = box_right
-        
-        for i in range(4):
-            y = channel_start_y - i * spacing
-            
-            # Add output channel
-            out_end = (x_end+1, y)
-            
-            # Fixed: Using .at() and .to() instead of .right() with .at()
-            d += elm.Line().at((x_end, y)).to(out_end)
-            d += elm.Label().label(f'D{i}').at((x_end-0.5, y))
-            
-            # Add filter and buffer
-            filter_pos = (x_end+1, y)
-            filter_end = (filter_pos[0]+0.75, filter_pos[1])
-            
-            d += elm.Dot().at(filter_pos)
-            
-            # Fixed: Using .at() and .to() instead of .right() with .at()
-            d += elm.Resistor().at(filter_pos).to(filter_end).label('33Ω')
-            
-            # Add capacitor to ground
-            cap_pos = (filter_end[0], filter_end[1])
-            cap_down = (cap_pos[0], cap_pos[1]-0.5)
-            cap_end = (cap_pos[0], cap_pos[1]-1)
-            
-            d += elm.Dot().at(cap_pos)
-            
-            # Fixed: Using .at() and .to() instead of .down() with .at()
-            d += elm.Line().at(cap_pos).to(cap_down)
-            d += elm.Capacitor().at(cap_down).to(cap_end).label('100pF')
-            d += elm.Ground().at(cap_end)
-            
-            # Add buffer op-amp
-            buffer_pos = (cap_pos[0]+1, cap_pos[1])
-            
-            # Fixed: Using proper anchor naming and positioning
-            buffer = d.add(elm.Opamp(leads=False).anchor('in1').at(buffer_pos))
-        
-        # Add decoupling capacitors for multiplexer
-        add_decoupling_capacitors(d, (box_left+2, box_top), True, ['100nF', '10μF'])
-        
-        # Add technical notes
-        notes = [
-            "Control lines (S0-S3) select channel according to truth table",
-            "Digital isolation provided for all control signals",
-            "Pull-up/down resistors ensure defined states",
-            "Anti-aliasing filters on all outputs",
-            "ESD protection on all analog inputs"
-        ]
-        
-        add_technical_notes(d, (box_left+1, box_bottom-3), 'NOTES:', notes)
-        
-        d.save('schematics/multiplexer_circuit.png')
+        # Fixed: Using proper anchor naming and positioning
+        buffer = d.add(elm.Opamp(leads=False).anchor('in1').at(buffer_pos))
+    
+    # Add decoupling capacitors for multiplexer
+    add_decoupling_capacitors(d, (box_left+2, box_top), True, ['100nF', '10μF'])
+    
+    # Add technical notes
+    notes = [
+        "Control lines (S0-S3) select channel according to truth table",
+        "Digital isolation provided for all control signals",
+        "Pull-up/down resistors ensure defined states",
+        "Anti-aliasing filters on all outputs",
+        "ESD protection on all analog inputs"
+    ]
+    
+    add_technical_notes(d, (box_left+1, box_bottom-3), 'NOTES:', notes)
+    
+    # Save the drawing
+    save_drawing(d, 'multiplexer_circuit')
+    
+    # Return the drawing object
+    return d
 
 # =============================================================================
 # ADC SECTION
 # =============================================================================
 
 @with_error_handling
-def draw_adc(unit_size: float = DEFAULT_UNIT_SIZE) -> None:
+def draw_adc(unit_size: float = DEFAULT_UNIT_SIZE) -> Drawing:
     """
     Draw the ADC Interface circuit
     
     Args:
         unit_size: Size of the drawing units
+        
+    Returns:
+        The completed Drawing object
     """
-    with schemdraw.Drawing() as d:
-        d.config(unit=unit_size)
-        d += elm.Label().label('ADC INTERFACE CIRCUIT (ADS8688)', loc='top')
-        d += elm.Label().label('8-Channel, 16-Bit Analog-to-Digital Converter', loc='top').at((0, -0.5)).color('blue')
+    # Create a new drawing
+    d = schemdraw.Drawing()
+    d.config(unit=unit_size)
+    
+    d += elm.Label().label('ADC INTERFACE CIRCUIT (ADS8688)', loc='top')
+    d += elm.Label().label('8-Channel, 16-Bit Analog-to-Digital Converter', loc='top').at((0, -0.5)).color('blue')
+    
+    # Create a helper function for drawing input filters
+    def draw_input_filter(d, x_start, y, channel):
+        # Draw input line from left
+        input_point = (x_start, y)
+        d += elm.Dot().at(input_point)
+        d += elm.Label().label(f'AIN{channel}').at((input_point[0]-0.5, input_point[1]))
         
-        # Create a helper function for drawing input filters
-        def draw_input_filter(d, x_start, y, channel):
-            # Draw input line from left
-            input_point = (x_start, y)
-            d += elm.Dot().at(input_point)
-            d += elm.Label().label(f'AIN{channel}').at((input_point[0]-0.5, input_point[1]))
-            
-            # Add anti-aliasing filter (2-pole RC)
-            # First resistor
-            res1_start = input_point
-            res1_end = (res1_start[0]+1, res1_start[1])
-            
-            # Fixed: Using .at() and .to() instead of .right() with .at()
-            d += elm.Resistor().at(res1_start).to(res1_end).label('33Ω')
-            
-            # First capacitor
-            cap1_pos = res1_end
-            cap1_down = (cap1_pos[0], cap1_pos[1]-0.75)
-            cap1_end = (cap1_pos[0], cap1_pos[1]-1.5)
-            
-            d += elm.Dot().at(cap1_pos)
-            
-            # Fixed: Using .at() and .to() instead of .down() with .at()
-            d += elm.Line().at(cap1_pos).to(cap1_down)
-            d += elm.Capacitor().at(cap1_down).to(cap1_end).label('100pF')
-            d += elm.Ground().at(cap1_end)
-            
-            # Second resistor
-            res2_start = cap1_pos
-            res2_end = (res2_start[0]+1, res2_start[1])
-            
-            # Fixed: Using .at() and .to() instead of .right() with .at()
-            d += elm.Resistor().at(res2_start).to(res2_end).label('33Ω')
-            
-            # Second capacitor
-            cap2_pos = res2_end
-            cap2_down = (cap2_pos[0], cap2_pos[1]-0.75)
-            cap2_end = (cap2_pos[0], cap2_pos[1]-1.5)
-            
-            d += elm.Dot().at(cap2_pos)
-            
-            # Fixed: Using .at() and .to() instead of .down() with .at()
-            d += elm.Line().at(cap2_pos).to(cap2_down)
-            d += elm.Capacitor().at(cap2_down).to(cap2_end).label('100pF')
-            d += elm.Ground().at(cap2_end)
-            
-            # ESD protection
-            diode_pos = (cap2_pos[0]+1, cap2_pos[1])
-            
-            # Fixed: Using .at() and .to() instead of .right() with .at()
-            d += elm.Line().at(cap2_pos).to(diode_pos)
-            
-            # TVS diodes in both directions
-            diode_up = (diode_pos[0], diode_pos[1]+0.75)
-            diode_up_end = (diode_pos[0], diode_pos[1]+1.5)
-            
-            # Fixed: Using .at() and .to() instead of .up() with .at()
-            d += elm.Line().at(diode_pos).to(diode_up)
-            d += elm.Diode().at(diode_up).to(diode_up_end).label('ESD')
-            d += elm.Label().label('+3.3V').at(diode_up_end).color('orange')
-            
-            diode_down = (diode_pos[0], diode_pos[1]-0.75)
-            diode_down_end = (diode_pos[0], diode_pos[1]-1.5)
-            
-            # Fixed: Using .at() and .to() instead of .down() with .at()
-            d += elm.Line().at(diode_pos).to(diode_down)
-            d += elm.Diode().at(diode_down).to(diode_down_end).flip().label('ESD')
-            d += elm.Ground().at(diode_down_end)
-            
-            # Connect to ADC input
-            adc_conn = (diode_pos[0]+1.25, diode_pos[1])
-            
-            # Fixed: Using .at() and .to() instead of .right() with .at()
-            d += elm.Line().at(diode_pos).to(adc_conn)
-            
-            return adc_conn
-            
-        # Main box for ADS8688
-        box_width = 8
-        box_height = 12
-        box_left = -4  # Center the box horizontally
-        box_top = 6    # Position the top of the box
-        # Use 'at' instead of non-existent 'center' method
-        box = d.add(elm.Rect(w=box_width, h=box_height).at((box_left, box_top-box_height)).label('ADS8688', 'top'))
+        # Add anti-aliasing filter (2-pole RC)
+        # First resistor
+        res1_start = input_point
+        res1_end = (res1_start[0]+1, res1_start[1])
         
-        # Get box corners
-        box_left = box.get_bbox()[0]
-        box_right = box.get_bbox()[2]
-        box_top = box.get_bbox()[3]
-        box_bottom = box.get_bbox()[1]
+        # Fixed: Using .at() and .to() instead of .right() with .at()
+        d += elm.Resistor().at(res1_start).to(res1_end).label('33Ω')
         
-        # Add section labels
-        d += elm.Label().label('Analog Inputs').at((box_left+2, box_top-1))
-        d += elm.Label().label('Digital Interface').at((box_right-2, box_top-1))
-        d += elm.Label().label('Reference').at((box_left+2, box_top-6))
-        d += elm.Label().label('Clock').at((box_right-2, box_top-6))
+        # First capacitor
+        cap1_pos = res1_end
+        cap1_down = (cap1_pos[0], cap1_pos[1]-0.75)
+        cap1_end = (cap1_pos[0], cap1_pos[1]-1.5)
         
-        # Draw 8 input channels
-        for i in range(8):
-            y_pos = box_top - 1 - i * 1.25
-            draw_input_filter(d, box_left - 6, y_pos, i)
-            
-        # SPI Interface with digital isolation
-        iso_right = box_right + 2
-        iso_top = box_top - 2
-        iso_box = d.add(elm.Rect(w=3, h=3).at((iso_right, iso_top)))
-        d += elm.Label().label('ISO7741\nDigital Isolator').at((iso_right+1.5, iso_top+1.5))
+        d += elm.Dot().at(cap1_pos)
         
-        # Add MCU side
-        d += elm.Label().label('To\nMCU').at((iso_right+4.5, iso_top+1.5)).color('green')
+        # Fixed: Using .at() and .to() instead of .down() with .at()
+        d += elm.Line().at(cap1_pos).to(cap1_down)
+        d += elm.Capacitor().at(cap1_down).to(cap1_end).label('100pF')
+        d += elm.Ground().at(cap1_end)
         
-        # Add SPI connections with pull-up resistors
-        spi_labels = ['SCLK', 'MOSI', 'MISO', '/CS']
+        # Second resistor
+        res2_start = cap1_pos
+        res2_end = (res2_start[0]+1, res2_start[1])
         
-        # Define spacing for SPI signals
-        spacing = 0.5
+        # Fixed: Using .at() and .to() instead of .right() with .at()
+        d += elm.Resistor().at(res2_start).to(res2_end).label('33Ω')
         
-        # Draw digital connections
-        for i, label in enumerate(spi_labels):
-            y = box_top - 1 - i * spacing
-            
-            # Add connection from ADC to isolator
-            x_end = box_right
-            iso_in = (iso_right, y)
-            
-            # Fixed: Using .at() and .to() instead of .right() with .at()
-            d += elm.Line().at((x_end, y)).to(iso_in)
-            
-            # Add pull-up resistors
-            pull_up_pos = (x_end+1, y)
-            pull_up_top = (pull_up_pos[0], pull_up_pos[1]+0.75)
-            pull_up_end = (pull_up_pos[0], pull_up_pos[1]+1.5)
-            
-            d += elm.Dot().at(pull_up_pos)
-            
-            # Fixed: Using .at() and .to() instead of .up() with .at()
-            d += elm.Line().at(pull_up_pos).to(pull_up_top)
-            d += elm.Resistor().at(pull_up_top).to(pull_up_end).label('4.7kΩ')
-            d += elm.Label().label('+3.3V').at((pull_up_end[0], pull_up_end[1]+0.25)).color('orange')
-            
-            # Add label
-            d += elm.Label().label(label).at((x_end-0.5, y))
+        # Second capacitor
+        cap2_pos = res2_end
+        cap2_down = (cap2_pos[0], cap2_pos[1]-0.75)
+        cap2_end = (cap2_pos[0], cap2_pos[1]-1.5)
         
-        # Add reference circuit
-        ref_pos = (box_left-2, box_top-8)
-        ref_box = d.add(elm.Rect(w=2, h=1.5).at(ref_pos).label('REF5025', 'top'))
-        d += elm.Label().label('2.5V Reference').at((ref_pos[0]+1, ref_pos[1]-0.5)).color('blue')
+        d += elm.Dot().at(cap2_pos)
         
-        # Connect reference to ADC
-        ref_out = (ref_pos[0]+2, ref_pos[1]-0.75)
-        adc_ref = (box_left, box_top-8)
+        # Fixed: Using .at() and .to() instead of .down() with .at()
+        d += elm.Line().at(cap2_pos).to(cap2_down)
+        d += elm.Capacitor().at(cap2_down).to(cap2_end).label('100pF')
+        d += elm.Ground().at(cap2_end)
         
-        # Fixed: Using .at() and .to() instead of directional methods with .at()
-        d += elm.Line().at(ref_out).to(adc_ref)
-        d += elm.Label().label('REFP').at((box_left-0.5, box_top-8))
+        # ESD protection
+        diode_pos = (cap2_pos[0]+1, cap2_pos[1])
         
-        # Add decoupling
-        add_decoupling_capacitors(d, (ref_pos[0]+1, ref_pos[1]-1.5), False, ['100nF', '1μF'])
+        # Fixed: Using .at() and .to() instead of .right() with .at()
+        d += elm.Line().at(cap2_pos).to(diode_pos)
         
-        # Add notes
-        notes = [
-            "2-pole anti-aliasing filters on all inputs (33Ω, 100pF)",
-            "Digital isolation for all SPI signals",
-            "Precision 2.5V voltage reference with buffer",
-            "ESD protection on all analog inputs",
-            "4.7kΩ pull-up resistors on all SPI signals"
-        ]
+        # TVS diodes in both directions
+        diode_up = (diode_pos[0], diode_pos[1]+0.75)
+        diode_up_end = (diode_pos[0], diode_pos[1]+1.5)
         
-        add_technical_notes(d, (box_left+1, box_bottom-4), 'NOTES:', notes)
+        # Fixed: Using .at() and .to() instead of .up() with .at()
+        d += elm.Line().at(diode_pos).to(diode_up)
+        d += elm.Diode().at(diode_up).to(diode_up_end).label('ESD')
+        d += elm.Label().label('+3.3V').at(diode_up_end).color('orange')
         
-        d.save('schematics/adc_interface.png')
+        diode_down = (diode_pos[0], diode_pos[1]-0.75)
+        diode_down_end = (diode_pos[0], diode_pos[1]-1.5)
+        
+        # Fixed: Using .at() and .to() instead of .down() with .at()
+        d += elm.Line().at(diode_pos).to(diode_down)
+        d += elm.Diode().at(diode_down).to(diode_down_end).flip().label('ESD')
+        d += elm.Ground().at(diode_down_end)
+        
+        # Connect to ADC input
+        adc_conn = (diode_pos[0]+1.25, diode_pos[1])
+        
+        # Fixed: Using .at() and .to() instead of .right() with .at()
+        d += elm.Line().at(diode_pos).to(adc_conn)
+        
+        return adc_conn
+        
+    # Main box for ADS8688
+    box_width = 8
+    box_height = 12
+    box_left = -4  # Center the box horizontally
+    box_top = 6    # Position the top of the box
+    # Use 'at' instead of non-existent 'center' method
+    box = d.add(elm.Rect(w=box_width, h=box_height).at((box_left, box_top-box_height)).label('ADS8688', 'top'))
+    
+    # Get box corners
+    box_left = box.get_bbox()[0]
+    box_right = box.get_bbox()[2]
+    box_top = box.get_bbox()[3]
+    box_bottom = box.get_bbox()[1]
+    
+    # Add section labels
+    d += elm.Label().label('Analog Inputs').at((box_left+2, box_top-1))
+    d += elm.Label().label('Digital Interface').at((box_right-2, box_top-1))
+    d += elm.Label().label('Reference').at((box_left+2, box_top-6))
+    d += elm.Label().label('Clock').at((box_right-2, box_top-6))
+    
+    # Draw 8 input channels
+    for i in range(8):
+        y_pos = box_top - 1 - i * 1.25
+        draw_input_filter(d, box_left - 6, y_pos, i)
+        
+    # SPI Interface with digital isolation
+    iso_right = box_right + 2
+    iso_top = box_top - 2
+    iso_box = d.add(elm.Rect(w=3, h=3).at((iso_right, iso_top)))
+    d += elm.Label().label('ISO7741\nDigital Isolator').at((iso_right+1.5, iso_top+1.5))
+    
+    # Add MCU side
+    d += elm.Label().label('To\nMCU').at((iso_right+4.5, iso_top+1.5)).color('green')
+    
+    # Add SPI connections with pull-up resistors
+    spi_labels = ['SCLK', 'MOSI', 'MISO', '/CS']
+    
+    # Define spacing for SPI signals
+    spacing = 0.5
+    
+    # Draw digital connections
+    for i, label in enumerate(spi_labels):
+        y = box_top - 1 - i * spacing
+        
+        # Add connection from ADC to isolator
+        x_end = box_right
+        iso_in = (iso_right, y)
+        
+        # Fixed: Using .at() and .to() instead of .right() with .at()
+        d += elm.Line().at((x_end, y)).to(iso_in)
+        
+        # Add pull-up resistors
+        pull_up_pos = (x_end+1, y)
+        pull_up_top = (pull_up_pos[0], pull_up_pos[1]+0.75)
+        pull_up_end = (pull_up_pos[0], pull_up_pos[1]+1.5)
+        
+        d += elm.Dot().at(pull_up_pos)
+        
+        # Fixed: Using .at() and .to() instead of .up() with .at()
+        d += elm.Line().at(pull_up_pos).to(pull_up_top)
+        d += elm.Resistor().at(pull_up_top).to(pull_up_end).label('4.7kΩ')
+        d += elm.Label().label('+3.3V').at((pull_up_end[0], pull_up_end[1]+0.25)).color('orange')
+        
+        # Add label
+        d += elm.Label().label(label).at((x_end-0.5, y))
+    
+    # Add reference circuit
+    ref_pos = (box_left-2, box_top-8)
+    ref_box = d.add(elm.Rect(w=2, h=1.5).at(ref_pos).label('REF5025', 'top'))
+    d += elm.Label().label('2.5V Reference').at((ref_pos[0]+1, ref_pos[1]-0.5)).color('blue')
+    
+    # Connect reference to ADC
+    ref_out = (ref_pos[0]+2, ref_pos[1]-0.75)
+    adc_ref = (box_left, box_top-8)
+    
+    # Fixed: Using .at() and .to() instead of directional methods with .at()
+    d += elm.Line().at(ref_out).to(adc_ref)
+    d += elm.Label().label('REFP').at((box_left-0.5, box_top-8))
+    
+    # Add decoupling
+    add_decoupling_capacitors(d, (ref_pos[0]+1, ref_pos[1]-1.5), False, ['100nF', '1μF'])
+    
+    # Add notes
+    notes = [
+        "2-pole anti-aliasing filters on all inputs (33Ω, 100pF)",
+        "Digital isolation for all SPI signals",
+        "Precision 2.5V voltage reference with buffer",
+        "ESD protection on all analog inputs",
+        "4.7kΩ pull-up resistors on all SPI signals"
+    ]
+    
+    add_technical_notes(d, (box_left+1, box_bottom-4), 'NOTES:', notes)
+    
+    # Save the drawing
+    save_drawing(d, 'adc_interface')
+    
+    # Return the drawing object
+    return d
 
 # =============================================================================
 # MAIN FUNCTION AND ENTRY POINT
@@ -1114,29 +1255,30 @@ def main(unit_size: float = DEFAULT_UNIT_SIZE,
         try:
             print(f"Drawing {name}...")
             # Call the drawing function to generate the circuit
-            drawing = draw_func(unit_size)
-            
-            # Save the drawing to files
-            save_drawing(drawing, os.path.join(output_dir, name), formats)
+            # The drawing functions now handle saving internally
+            draw_func(unit_size)
             
             # Export to LTSpice if enabled
             if enable_ltspice and ltspice is not None:
+                print(f"Exporting {name} to LTSpice format...")
+                ltspice_file = os.path.join(ltspice_dir, f"{name}.net")
                 try:
-                    print(f"Exporting {name} to LTSpice format...")
+                    # Call the drawing function again to get a fresh drawing object
+                    drawing = draw_func(unit_size)
                     ltspice.export_to_ltspice(name, drawing, ltspice_dir)
-                    print(f"LTSpice export successful: {os.path.join(ltspice_dir, name + '.net')}")
+                    print(f"LTSpice export successful: {ltspice_file}")
                 except Exception as e:
                     print(f"Error exporting to LTSpice: {str(e)}")
             
             print(f"Successfully completed {name}")
         except Exception as e:
-            print(f"Error drawing {name}: {str(e)}")
-            traceback.print_exc()
+            print(f"Error processing {name}: {str(e)}")
+            print(traceback.format_exc())
     
-    # Create LTSpice component model library if enabled
+    # Create LTSpice model library
     if enable_ltspice and ltspice is not None:
+        print("Creating LTSpice model library...")
         try:
-            print("Creating LTSpice model library...")
             # Define component models for the TMR sensor array circuits
             model_specs = {
                 'AD8220': {
@@ -1185,6 +1327,7 @@ def main(unit_size: float = DEFAULT_UNIT_SIZE,
                     ]
                 }
             }
+            
             # Create the model library
             lib_file = ltspice.create_ltspice_model_library(model_specs, ltspice_dir)
             print(f"LTSpice model library created: {lib_file}")
